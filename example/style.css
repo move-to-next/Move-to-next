@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.text-box.bounce{
+    display: none;
+}
+.text-box.bounce h1{
+    display: flex;
+    gap: 0;
+    font-size: 86px;
+    line-height: 80px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 900;
+}
+.text-box.bounce h1 em{
+    font-style: normal;
+    transform: scaleY(0%);
+    transform-origin: bottom;
+    animation-name: bounce;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+.text-box.bounce h1 em[class*=one]{
+    animation-delay: 0s;
+}
+.text-box.bounce h1 em[class*=two]{
+    animation-delay: 0.1s;
+}
+.text-box.bounce h1 em[class*=three]{
+    animation-delay: 0.2s;
+}
+.text-box.bounce h1 em[class*=four]{
+    animation-delay: 0.3s;
+}
+.text-box.bounce h1 em[class*=five]{
+    animation-delay: 0.4s;
+}
+.text-box.bounce h1 em[class*=six]{
+    animation-delay: 0.5s;
+}
+.text-box.bounce h1 em[class*=seven]{
+    animation-delay: 0.6s;
+}
+.text-box.bounce h1 em[class*=eight]{
+    animation-delay: 0.7s;
+}
+.text-box.bounce h1 em[class*=nine]{
+    animation-delay: 0.8s;
+}
+.text-box.bounce h1 em[class*=ten]{
+    animation-delay: 0.9s;
+}
+@keyframes bounce{
+    0%{
+        transform: scaleY(0%);
+    }
+    20%{
+        transform: scaleY(0%);
+    }
+    60%{
+        transform: scaleY(100%);
+    }
+    70%{
+        transform: scaleY(85%);
+    }
+    80%{
+        transform: scaleY(100%);
+    }
+    90%{
+        transform: scaleY(95%);
+    }
+    100%{
+        transform: scaleY(100%);
+    }
+}
+
+.text-box.blur h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 0;
+    font-size: 86px;
+    line-height: 80px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 900;
+    z-index: 40;
+}
+.text-box.blur h1 em{
+    font-style: normal;
+    animation: blur;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+@keyframes blur{
+    0%{
+        filter: blur(100px);
+        opacity: 0;
+    }
+    50%{
+        filter: blur(100px);
+        opacity: 0;
+    }
+    100%{
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.text-box.blur .bg-wrapper{
+    position: relative;
+    width: 800px;
+    height: 800px;
+    background-color: #521262;
+    overflow: hidden;
+    z-index: 10;
+}
+.bg-wrapper div{
+    position: absolute;
+    width: 800px;
+    height: 1200px;
+    border-radius: 100%;
+    filter: blur(130px);
+    opacity: 0.7;
+}
+.bg-wrapper .bg-one{
+    background-color: #3490de;
+    top: -30%;
+    left: 80%;
+    animation: turn 16s linear infinite;
+}
+.bg-wrapper .bg-two{
+    background-color: #3490de;
+    top: -30%;
+    left: -20%;
+    animation: turnPlus 16s linear infinite;
+}
+.bg-wrapper .bg-three{
+    background-color: #6639a6;
+    top: 15%;
+    left: 80%;
+    animation: turnPlus 16s linear infinite;
+    z-index: 40;
+}
+.bg-wrapper .bg-four{
+    background-color: #00b8a9;
+    animation: turn 16s linear infinite;
+    z-index: 30;
+}
+@keyframes turn{
+    50%{
+        transform: rotate(1turn) translate(-350px);
+    }
+    100%{
+        transform: rotate(2turn) translate(0%);
+    }
+}
+@keyframes turnPlus {
+    50%{
+        transform: rotate(-1turn) translate(-450px);
+    }
+    100%{
+        transform: rotate(-2turn) translate(0%);
+    }
+}
