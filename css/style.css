@@ -33,6 +33,7 @@ header{
     position: fixed;
     width: 100%;
     z-index: 100;
+    transition: 0.1s;
 }
 .header-inner{
     display: flex;
@@ -81,6 +82,10 @@ nav.gnb ul li span{
     font-weight: 500;
     font-size: 20px;
     color: #fff;
+    transition: 0.1s;
+}
+nav.gnb ul li:hover span{
+    font-weight: 800;
 }
 
 .opening-container{
@@ -732,7 +737,7 @@ nav.gnb ul li span{
     display: flex;
     flex-direction: column;
     gap: 1vh;
-    top: 38%;
+    top: 45%;
     height: 65%;
 }
 .project-title .title-text{

@@ -44,13 +44,19 @@ const swiper = new Swiper('.swiper', {
 })
 
 let header = document.querySelector('header');
+let gnbMenus = document.querySelectorAll('nav.gnb ul li span');
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
-    console.log(pageTop);
-    if(pageTop == 300){
-        header.style.backgroundColor = '#fff';
-    }
-    else{
-        header.style.backgroundColor = 'transparent';
-    }
+    gnbMenus.forEach(menu => {
+        if(pageTop >= 800){
+            header.style.backgroundColor = '#ffffff';
+            menu.style.color = '#000';
+        }
+        else{
+            header.style.backgroundColor = 'transparent';
+            menu.style.color = '#fff';
+        }
+    })
 })
+
+// about : 950
