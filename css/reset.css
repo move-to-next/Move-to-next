@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-weight: 500;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+button{
+    cursor: pointer;
+}
+input{
+    border: none;
+}
+.hide{
+    display: block;
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
+    text-indent: -999em;
+}
