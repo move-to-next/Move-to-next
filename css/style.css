@@ -164,6 +164,7 @@ nav.gnb ul li:hover span{
     }
 }
 
+
 /* ##### MAIN SECTION ##### */
 .main-container{
     position: relative;
@@ -562,10 +563,10 @@ nav.gnb ul li:hover span{
     height: 100vh;
     background-color: #555;
 }
-.third-wrap .skill h2{
+.third-wrap .menu.skill h2{
     position: relative;
 }
-.third-wrap .skill .skill-card-container{
+.third-wrap .menu.skill .skill-card-container{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -731,7 +732,7 @@ nav.gnb ul li:hover span{
     flex-direction: row;
     gap: 0;
 }
-.menu-inner .project-title{
+.menu.project .menu-inner .project-title{
     flex: 3;
     position: sticky;
     display: flex;
@@ -862,8 +863,6 @@ p.project-info span em{
     transform: translateY(-76%);
     transition: 5s;
 }
-
-
 .project-thums .responsive{
     position: relative;
     width: 60%;
@@ -942,9 +941,108 @@ li.clone-project .link-btns a.link-btn span em{
 
 
 /* ### FIVETH WRAP ### */
-.main-container .fiveth-wrap{
+.main-container .fifth-wrap{
     position: relative;
     width: 100%;
     height: 100vh;
     background-color: #555;
+}
+.fiveth-wrap .menu.design{}
+.menu.design .menu-inner{
+    position: relative;
+}
+.menu-inner .project-box{
+    position: relative;
+    width: 100%;
+    height: inherit;
+}
+.project-box .project-wrap{
+    position: relative;
+    display: flex;
+    gap: 20px;
+    height: inherit;
+}
+.project-wrap .project-lists{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.project-lists.left{
+    flex: 3;
+}
+.project-lists.right{
+    flex: 2;
+}
+.project-lists.left .left-bottom{
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.project-lists .project-list{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.project-list .project-info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.project-list .project-info .logo{
+    position: relative;
+    min-width: 10vw;
+    padding-top: 12%;
+}
+.project-list .project-info .logo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project-info .text{
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    color: #fff;
+}
+
+.project-list.first{
+    position: relative;
+    flex: 1;
+    min-width: 100%;
+}
+.project-list.first img{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transform: scale(1.2);
+    z-index: 20;
+}
+.project-list.second{
+    background-color: cornflowerblue;
+}
+.project-list.third{
+    background-color: green;
+}
+.project-list.fourth{
+    flex: 2;
+    background-color: rosybrown;
+}
+.project-list.fifth{
+    flex: 1;
+    background-color: thistle;
 }
