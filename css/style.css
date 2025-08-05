@@ -1055,7 +1055,7 @@ li.clone-project .link-btns a.link-btn span em{
 }
 .design-list.second .design-card:hover img.design-bg{
     transform: scale(1.6);
-    transform-origin: 20% 15%;
+    transform-origin: 20% 20%;
 }
 .design-list.third .design-card:hover img.design-bg{
     transform: scale(1.4);

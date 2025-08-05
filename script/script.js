@@ -33,7 +33,7 @@ infos.forEach((info, index)=>{
     info.addEventListener('mouseleave', () => leaveCard(index));
 })
 
-const swiper = new Swiper('.swiper', {
+const projectSwiper = new Swiper('.project-list-wrap.swiper', {
     direction: 'horizontal',
     loop: true,
     pagination: false,
@@ -41,6 +41,28 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next'
     },
+})
+
+const bottomSwiper = new Swiper('.design-list:is(.second,.third,.fifth).swiper', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        pauseOnMouseEnter: true,
+    },
+    pagination: false,
+    navigation: false
+})
+const topSwiper = new Swiper('.design-list.fourth.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    speed: 2500,
+    autoplay: {
+        delay: 3000,
+        pauseOnMouseEnter: true,
+    },
+    pagination: false,
+    navigation: false
 })
 
 let header = document.querySelector('header');
