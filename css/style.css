@@ -168,8 +168,13 @@ nav.gnb ul li:hover span{
 /* ##### MAIN SECTION ##### */
 .main-container{
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 600vh;
+}
+.main-container>div[class*='-wrap']{
+    flex: 1;
 }
 /* ### FIRST WRAP ### */
 .main-container .first-wrap{
@@ -1232,4 +1237,107 @@ li.clone-project .link-btns a.link-btn span em{
 }
 .banner.fifth.two .fullImage:hover img{
     transform: translateY(-60%);
+}
+
+
+/* ### SIXTH WRAP ### */
+.main-container .sixth-wrap{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+}
+.menu.contact .menu-inner{
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+}
+.menu.contact .menu-inner .contact-title{
+    width: 45%;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top: 45%;
+    height: 67%;
+}
+.contact-title h2{
+    display: block;
+    font-size: 56px;
+    margin-bottom: 2vh;
+}
+.contact-title span[class*='-text']{
+    color: #fff;
+    font-family: 'Noto Sans KR';
+}
+.contact-title span.title-text{
+    font-size: 28px;
+    font-weight: 700;
+}
+.contact-title span.sub-text{
+    font-size: 18px;
+    font-weight: 300;
+}
+.menu.contact .menu-inner .contact-box{
+    width: 55%;
+    border-left: 1px solid #fff;
+    padding-left: 3vw;
+}
+.contact-box ul.contact-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+ul.contact-wrap li.contact-list{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+li.contact-list p.title{
+    position: relative;
+    font-family: "Paperlogy";
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+li.contact-list p.title::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    right: 0;
+    width: 80%;
+    height: 1px;
+    border-bottom: 1px solid #fff;
+}
+li.contact-list span.text{
+    font-family: "Paperlogy";
+    font-size: 38px;
+    font-weight: 200;
+    color: #fff;
+    user-select: none;
+}
+li.contact-list:not(:first-child) span.text{
+    cursor: pointer;
+}
+
+
+/* ##### FOOTER ##### */
+footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    background: #555;
+}
+footer .footer-inner{
+    height: 7vh;
+    padding: 25px 0;
+    text-align: center;
+}
+.footer-inner address.copyright{
+    display: block;
+    font-size: 14px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    color: #c2c2c2;
 }
