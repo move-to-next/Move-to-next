@@ -59,4 +59,23 @@ window.addEventListener('scroll', function(){
     })
 })
 
+let bannerBg = document.querySelector('.banner-wrap');
+let designCards = document.querySelectorAll('.design-list .design-card');
+let banners = document.querySelectorAll('.banner-wrap .banner');
+let closeBtns = document.querySelectorAll('.banner .close-btn');
+
+designCards.forEach((card, index) => {
+    card.addEventListener('click', function(){
+        banners[index].classList.add('active');
+        bannerBg.classList.add('active');
+    })
+})
+
+closeBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function(){
+        banners[index].classList.remove('active');
+        bannerBg.classList.remove('active');
+    })
+})
+
 // about : 950
