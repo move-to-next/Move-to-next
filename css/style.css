@@ -83,14 +83,16 @@ nav.gnb ul li span{
     font-size: 20px;
     color: #fff;
     transition: 0.1s;
+    user-select: none;
 }
 nav.gnb ul li:hover span{
     font-weight: 800;
 }
 
+
+/* ##### OPENING CONTAINER ##### */
 .opening-container{
     position: fixed;
-    display: none;
     width: 100%;
     height: 100vh;
     z-index: 200;
@@ -137,9 +139,9 @@ nav.gnb ul li:hover span{
     display: flex;
     flex-direction: column;
     gap: 0%;
-    /* animation: move 1.5s ease-out;
+    animation: move 1.5s ease-out;
     animation-delay: 3s;
-    animation-fill-mode: forwards; */
+    animation-fill-mode: forwards;
 }
 .test-box.move div{
     flex: 0.5;
@@ -811,7 +813,7 @@ p.project-info b::after{
     margin:0 0 3px 6px;
 }
 li.web-project p.project-info b::after{
-    content: '웹사이트';
+    content: '포트폴리오';
     background-color: #000;
     color: #faf9ee;
 }
@@ -1319,6 +1321,45 @@ li.contact-list span.text{
 }
 li.contact-list:not(:first-child) span.text{
     cursor: pointer;
+}
+
+
+/* ##### TOP BTN ##### */
+.top-btn{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 35px;
+    border-radius: 50%;
+    background-color: rgba(238, 232, 195, 0.8);
+    transform: translate(100%, -40%);
+    transition: 0.2s ease-in-out;
+    z-index: 100;
+}
+.top-btn .btn-inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.btn-inner .bi{
+    display: block;
+    font-size: 30px;
+    color: #64563b;
+    transform: translateY(-5%);
+}
+.btn-inner span{
+    display: block;
+    font-family: 'Paperlogy';
+    font-size: 16px;
+    font-weight: 700;
+    color: #64563b;;
+    transform: translateY(-55%);
+    user-select: none;
 }
 
 

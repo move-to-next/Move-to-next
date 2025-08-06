@@ -42,7 +42,6 @@ const projectSwiper = new Swiper('.project-list-wrap.swiper', {
         nextEl: '.swiper-button-next'
     },
 })
-
 const bottomSwiper = new Swiper('.design-list:is(.second,.third,.fifth).swiper', {
     direction: 'horizontal',
     loop: true,
@@ -69,15 +68,32 @@ let header = document.querySelector('header');
 let gnbMenus = document.querySelectorAll('nav.gnb ul li span');
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
+    let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
             header.style.backgroundColor = '#ffffff';
             menu.style.color = '#000';
+            topBtn.style.transform = 'translate(-40%, -40%)';
         }
         else{
             header.style.backgroundColor = 'transparent';
             menu.style.color = '#fff';
+            topBtn.style.transform = 'translate(100%, -40%)';
         }
+    })
+})
+
+let openBg = document.querySelector('.opening-container');
+setTimeout(()=>{
+    openBg.style.display = 'none';
+}, 4500)
+
+
+let topBtn = document.querySelector('.top-btn');
+topBtn.addEventListener('click', function(){
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     })
 })
 
@@ -92,7 +108,6 @@ designCards.forEach((card, index) => {
         bannerBg.classList.add('active');
     })
 })
-
 closeBtns.forEach((btn, index) => {
     btn.addEventListener('click', function(){
         banners[index].classList.remove('active');
@@ -100,4 +115,45 @@ closeBtns.forEach((btn, index) => {
     })
 })
 
-// about : 950
+let aboutGnb = document.querySelector('nav.gnb ul li.about');
+let skillGnb = document.querySelector('nav.gnb ul li.skill');
+let projectGnb = document.querySelector('nav.gnb ul li.project');
+let designGnb = document.querySelector('nav.gnb ul li.design');
+let contactGnb = document.querySelector('nav.gnb ul li.contact');
+
+aboutGnb.addEventListener('click', function(){
+    window.scrollTo({
+        top: 926,
+        behavior: 'smooth'
+    })
+})
+skillGnb.addEventListener('click', function(){
+    window.scrollTo({
+        top: 1880,
+        behavior: 'smooth'
+    })
+})
+projectGnb.addEventListener('click', function(){
+    window.scrollTo({
+        top: 2800,
+        behavior: 'smooth'
+    })
+})
+designGnb.addEventListener('click', function(){
+    window.scrollTo({
+        top: 3800,
+        behavior: 'smooth'
+    })
+})
+contactGnb.addEventListener('click', function(){
+    window.scrollTo({
+        top: 4700,
+        behavior: 'smooth'
+    })
+})
+
+// about : 926
+// skill : 1880
+// project : 2800
+// design : 3800
+// contact : 4700
