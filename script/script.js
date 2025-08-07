@@ -1,3 +1,5 @@
+let screenCount = 0;
+
 let cards = document.querySelectorAll('.card-wrap .card');
 let infos = document.querySelectorAll('.info-wrap .info');
 let hoverTexts = document.querySelectorAll('.card .card-hover');
@@ -85,10 +87,12 @@ window.addEventListener('scroll', function(){
     })
 })
 
+
 let openBg = document.querySelector('.opening-container');
 setTimeout(()=>{
     openBg.style.display = 'none';
 }, 4500)
+
 
 let topBtn = document.querySelector('.top-btn');
 topBtn.addEventListener('click', function(){
@@ -96,49 +100,49 @@ topBtn.addEventListener('click', function(){
         top: 0,
         behavior: 'smooth'
     })
+    screenCount = 0;
 })
 
 
-let result = 0;
 window.addEventListener('wheel', function(el){
     // scroll counting
     if(el.deltaY>0){
-        result = Math.min(result + 1, 6);
+        screenCount = Math.min(screenCount + 1, 6);
     }else{
-        result = Math.max(result - 1, 0);
+        screenCount = Math.max(screenCount - 1, 0);
     }
     // section scrolling
-    if(result == 0){
+    if(screenCount == 0){
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         })
-    }else if(result == 1){
+    }else if(screenCount == 1){
         window.scrollTo({
             top: 930,
             behavior: 'smooth'
         })
-    }else if(result == 2){
+    }else if(screenCount == 2){
         window.scrollTo({
             top: 1880,
             behavior: 'smooth'
         })
-    }else if(result == 3){
+    }else if(screenCount == 3){
         window.scrollTo({
             top: 2800,
             behavior: 'smooth'
         })
-    }else if(result == 4){
+    }else if(screenCount == 4){
         window.scrollTo({
             top: 3800,
             behavior: 'smooth'
         })
-    }else if(result == 5){
+    }else if(screenCount == 5){
         window.scrollTo({
             top: 4700,
             behavior: 'smooth'
         })
-    }else if(result == 6){
+    }else if(screenCount == 6){
         window.scrollTo({
             top: 4852,
             behavior: 'smooth'
@@ -175,30 +179,35 @@ aboutGnb.addEventListener('click', function(){
         top: 926,
         behavior: 'smooth'
     })
+    screenCount = 1;
 })
 skillGnb.addEventListener('click', function(){
     window.scrollTo({
         top: 1880,
         behavior: 'smooth'
     })
+    screenCount = 2;
 })
 projectGnb.addEventListener('click', function(){
     window.scrollTo({
         top: 2800,
         behavior: 'smooth'
     })
+    screenCount = 3;
 })
 designGnb.addEventListener('click', function(){
     window.scrollTo({
         top: 3800,
         behavior: 'smooth'
     })
+    screenCount = 4;
 })
 contactGnb.addEventListener('click', function(){
     window.scrollTo({
         top: 4700,
         behavior: 'smooth'
     })
+    screenCount = 5;
 })
 
 
