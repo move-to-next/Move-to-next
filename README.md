@@ -1,4 +1,4 @@
 # 포트폴리오 사이트 제작
 ## 제작기간 - 25.08.03 ~ 25.08.07 (5일)
 ## 기여도 - 디자인 100%, 퍼블리싱 100%
-## 사용 툴 - HTML,CSS,JAVASCRIPT,BOOTSTRAP
+## 사용 툴 - HTML, CSS, JAVASCRIPT, BOOTSTRAP
