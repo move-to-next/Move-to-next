@@ -16,22 +16,22 @@ function hoverCard(index){
     cards[index].classList.add('active');
     infos[index].classList.add('active');
 }
-
 function leaveCard(index){
     hoverTexts[index].classList.remove('active');
     cards[index].classList.remove('active');
     infos[index].classList.remove('active');
 }
 
+
 cards.forEach((card, index)=>{
     card.addEventListener('mouseover', () => hoverCard(index));
     card.addEventListener('mouseleave', () => leaveCard(index));
 })
-
 infos.forEach((info, index)=>{
     info.addEventListener('mouseover', () => hoverCard(index));
     info.addEventListener('mouseleave', () => leaveCard(index));
 })
+
 
 const projectSwiper = new Swiper('.project-list-wrap.swiper', {
     direction: 'horizontal',
@@ -64,10 +64,12 @@ const topSwiper = new Swiper('.design-list.fourth.swiper', {
     navigation: false
 })
 
+
 let header = document.querySelector('header');
 let gnbMenus = document.querySelectorAll('nav.gnb ul li span');
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
+    console.log(pageTop);
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
@@ -88,7 +90,6 @@ setTimeout(()=>{
     openBg.style.display = 'none';
 }, 4500)
 
-
 let topBtn = document.querySelector('.top-btn');
 topBtn.addEventListener('click', function(){
     window.scrollTo({
@@ -97,11 +98,59 @@ topBtn.addEventListener('click', function(){
     })
 })
 
+
+let result = 0;
+window.addEventListener('wheel', function(el){
+    // scroll counting
+    if(el.deltaY>0){
+        result = Math.min(result + 1, 6);
+    }else{
+        result = Math.max(result - 1, 0);
+    }
+    // section scrolling
+    if(result == 0){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }else if(result == 1){
+        window.scrollTo({
+            top: 930,
+            behavior: 'smooth'
+        })
+    }else if(result == 2){
+        window.scrollTo({
+            top: 1880,
+            behavior: 'smooth'
+        })
+    }else if(result == 3){
+        window.scrollTo({
+            top: 2800,
+            behavior: 'smooth'
+        })
+    }else if(result == 4){
+        window.scrollTo({
+            top: 3800,
+            behavior: 'smooth'
+        })
+    }else if(result == 5){
+        window.scrollTo({
+            top: 4700,
+            behavior: 'smooth'
+        })
+    }else if(result == 6){
+        window.scrollTo({
+            top: 4852,
+            behavior: 'smooth'
+        })
+    }
+})
+
+
 let bannerBg = document.querySelector('.banner-wrap');
 let designCards = document.querySelectorAll('.design-list .design-card');
 let banners = document.querySelectorAll('.banner-wrap .banner');
 let closeBtns = document.querySelectorAll('.banner .close-btn');
-
 designCards.forEach((card, index) => {
     card.addEventListener('click', function(){
         banners[index].classList.add('active');
@@ -115,12 +164,12 @@ closeBtns.forEach((btn, index) => {
     })
 })
 
+
 let aboutGnb = document.querySelector('nav.gnb ul li.about');
 let skillGnb = document.querySelector('nav.gnb ul li.skill');
 let projectGnb = document.querySelector('nav.gnb ul li.project');
 let designGnb = document.querySelector('nav.gnb ul li.design');
 let contactGnb = document.querySelector('nav.gnb ul li.contact');
-
 aboutGnb.addEventListener('click', function(){
     window.scrollTo({
         top: 926,
@@ -152,8 +201,65 @@ contactGnb.addEventListener('click', function(){
     })
 })
 
-// about : 926
-// skill : 1880
-// project : 2800
-// design : 3800
-// contact : 4700
+
+let slideObserver = new IntersectionObserver((slide) => {
+    slide.forEach((element)=>{
+        if(element.isIntersecting){
+            element.target.style.transform = 'translateX(0%)';
+        }
+        else{
+            element.target.style.transform = 'translateX(-100%)';
+        }
+    })
+})
+let fadeObserver = new IntersectionObserver((fade) => {
+    fade.forEach((element)=>{
+        if(element.isIntersecting){
+            element.target.style.opacity = '1';
+        }else{
+            element.target.style.opacity = '0';
+        }
+    })
+})
+let borderObserver = new IntersectionObserver((about) => {
+    about.forEach((element)=>{
+        if(element.isIntersecting){
+            element.target.style.strokeDashoffset = '1000';
+        }else{
+            element.target.style.strokeDashoffset = '4000';
+        }
+    })
+})
+
+let menuTitle = document.querySelectorAll('.menu-inner h2 span');
+slideObserver.observe(menuTitle[0]);
+slideObserver.observe(menuTitle[1]);
+slideObserver.observe(menuTitle[2]);
+slideObserver.observe(menuTitle[3]);
+slideObserver.observe(menuTitle[4]);
+
+
+let contactTitle = document.querySelectorAll('.contact-title span');
+let aboutObject = document.querySelectorAll('.profile>div');
+let skillObject = document.querySelectorAll('.skill-card-container>div');
+let designObject = document.querySelectorAll('.design-wrap>div');
+let contactObject = document.querySelectorAll('ul.contact-wrap li.contact-list');
+fadeObserver.observe(contactTitle[1]);
+fadeObserver.observe(contactTitle[2]);
+fadeObserver.observe(aboutObject[0]);
+fadeObserver.observe(aboutObject[1]);
+fadeObserver.observe(aboutObject[2]);
+fadeObserver.observe(skillObject[0]);
+fadeObserver.observe(skillObject[1]);
+fadeObserver.observe(designObject[0]);
+fadeObserver.observe(designObject[1]);
+fadeObserver.observe(contactObject[0]);
+fadeObserver.observe(contactObject[1]);
+fadeObserver.observe(contactObject[2]);
+
+
+let aboutBorder = document.querySelectorAll('.profile svg.background rect.border');
+let skillBorder = document.querySelector('.skill-card-container svg.background rect.border');
+borderObserver.observe(aboutBorder[0]);
+borderObserver.observe(aboutBorder[1]);
+borderObserver.observe(skillBorder);

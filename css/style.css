@@ -26,7 +26,28 @@ body{
     font-weight: 700;
     color: #fff;
     margin-top: 60px;
+    overflow: hidden;
 }
+.menu-inner h2 span{
+    display: block;
+    width: fit-content;
+    transform: translateX(-100%);
+    transition: 0.5s ease-out;
+}
+svg.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+svg.background rect.border{
+    fill: none;
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 4000;
+    transition: 2s;
+}
+
 
 /* ##### HEADER ##### */
 header{
@@ -186,7 +207,7 @@ nav.gnb ul li:hover span{
 }
 .first-wrap .intro-title{
     position: absolute;
-    width: 30%;
+    width: 30.5%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -272,6 +293,7 @@ nav.gnb ul li:hover span{
     font-weight: 800;
     font-size: 60px;
     text-align: center;
+    letter-spacing: -1px;
     color: #fff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
     opacity: 0;
@@ -469,16 +491,41 @@ nav.gnb ul li:hover span{
     height: 90%;
 }
 .profile-container .profile{
-    border: 1px solid #fff;
     border-radius: 10px;
     height: 100%;
-    padding: 3vh 2%;
+    padding: 3vh 3%;
 }
 .profile-container .profile.overview{
     flex: 1;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    overflow: hidden;
+}
+.profile.overview::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.profile svg.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.profile svg.background rect.border{
+    fill: none;
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 4000;
+    transition: 2s;
+}
+.profile.introduce svg.background rect.border{
+    transition-delay: 0.5s;
 }
 .profile.overview .thum{
     position: relative;
@@ -487,6 +534,9 @@ nav.gnb ul li:hover span{
     height: 0;
     padding-top: 130%;
     border-radius: 10px;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 1s;
 }
 .profile.overview .thum img{
     position: absolute;
@@ -498,13 +548,17 @@ nav.gnb ul li:hover span{
 }
 .profile-container .profile.introduce{
     flex: 2;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 4vh;
     justify-content: center;
+
 }
 .profile.introduce .top-info{
     color: #fff;
+    transition: 1s;
+    transition-delay: 1s;
 }
 .top-info h3{
     display: flex;
@@ -533,6 +587,8 @@ nav.gnb ul li:hover span{
     display: flex;
     flex-wrap: wrap;
     color: #fff;
+    transition: 1s;
+    transition-delay: 1s;
 }
 .bottom-info .info{
     flex: 1;
@@ -580,7 +636,6 @@ nav.gnb ul li:hover span{
     justify-content: center;
     height: 100%;
     padding: 0 3%;
-    border: 1px solid #fff;
     border-radius: 10px;
 }
 .skill-card-container .card-wrap{
@@ -588,6 +643,9 @@ nav.gnb ul li:hover span{
     justify-content: space-between;
     gap: 1vw;
     z-index: 30;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 0.5s;
 }
 .card-wrap .card{
     position: relative;
@@ -686,6 +744,9 @@ nav.gnb ul li:hover span{
     justify-content: space-between;
     gap: 1vw;
     margin-top: 1vh;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 1s;
 }
 .info-wrap .info{
     position: relative;
@@ -722,6 +783,9 @@ nav.gnb ul li:hover span{
     word-break: keep-all;
     user-select: none;
     color: #fff;
+}
+.skill-card-container svg.background rect.border{
+    transition: 3s;
 }
 
 
@@ -977,12 +1041,14 @@ li.clone-project .link-btns a.link-btn span em{
     display: flex;
     gap: 20px;
     flex-direction: column;
+    transition: 0.5s;
 }
 .design-lists.left{
     width: 60%;
 }
 .design-lists.right{
     width: 40%;
+    transition-delay: 0.5s;
 }
 .design-lists.left .left-bottom{
     flex: 1;
@@ -1254,6 +1320,7 @@ li.clone-project .link-btns a.link-btn span em{
     align-items: center;
     gap: 0;
 }
+
 .menu.contact .menu-inner .contact-title{
     width: 45%;
     position: sticky;
@@ -1270,6 +1337,8 @@ li.clone-project .link-btns a.link-btn span em{
 .contact-title span[class*='-text']{
     color: #fff;
     font-family: 'Noto Sans KR';
+    opacity: 0;
+    transition: all 1s;
 }
 .contact-title span.title-text{
     font-size: 28px;
@@ -1278,6 +1347,7 @@ li.clone-project .link-btns a.link-btn span em{
 .contact-title span.sub-text{
     font-size: 18px;
     font-weight: 300;
+    transition-delay: 0.5s;
 }
 .menu.contact .menu-inner .contact-box{
     width: 55%;
@@ -1294,6 +1364,7 @@ ul.contact-wrap li.contact-list{
     display: flex;
     flex-direction: column;
     gap: 2vh;
+    transition: 1s;
 }
 li.contact-list p.title{
     position: relative;
@@ -1321,6 +1392,15 @@ li.contact-list span.text{
 }
 li.contact-list:not(:first-child) span.text{
     cursor: pointer;
+}
+ul.contact-wrap li.contact-list:nth-child(1){
+    transition-delay: 0s;
+}
+ul.contact-wrap li.contact-list:nth-child(2){
+    transition-delay: 0.5s;
+}
+ul.contact-wrap li.contact-list:nth-child(3){
+    transition-delay: 1s;
 }
 
 
