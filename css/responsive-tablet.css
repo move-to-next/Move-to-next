@@ -26,12 +26,15 @@
     header .header-inner nav.gnb.active{
         transform: translateX(0%);
     }
-    .header-inner .gnb-responsive{
+    header .header-inner .gnb-responsive{
         display: block;
         position: absolute;
         right: 10%;
         z-index: 50;
         top: 40%;
+        animation: blur 4.2s ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
     }
     .gnb-responsive button{
         background: transparent;
@@ -39,7 +42,7 @@
         display: flex;
         flex-direction: column;
     }
-    .header-inner nav.gnb ul{
+    header .header-inner nav.gnb ul{
         flex-direction: column;
         align-items: flex-start;
     }
@@ -68,13 +71,10 @@
 
     /* ### FIRST WRAP ### */
     .main-container .first-wrap .intro-title{
-        width: 53%;
+        width: 55%;
     }
     .first-wrap .intro-title .title-top{
         gap: 20px;
-    }
-    .title-top span{
-
     }
     .intro-title .title-top .title-arrow::before{
         height: 2px;
@@ -89,7 +89,9 @@
         font-size: 14px;
     }
     .title-bottom .sub-text .cursor{
-        right: 0;
+        font-size: 14px;
+        line-height: 18px;
+        transform: translateX(-10px);
     }
     /* ### SECOND WRAP ### */
     /* ### THIRD WRAP ### */
