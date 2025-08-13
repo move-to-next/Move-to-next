@@ -44,6 +44,7 @@
         align-items: flex-start;
     }
     header .header-inner .gnb-bg{
+        display: block;
         opacity: 0;
     }
     header .header-inner .gnb-bg.active{

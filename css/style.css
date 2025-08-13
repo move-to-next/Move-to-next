@@ -113,6 +113,9 @@ nav.gnb ul li:hover span{
 .header-inner .gnb-responsive{
     display: none;
 }
+.header-inner .gnb-bg{
+    display: none;
+}
 
 
 /* ##### OPENING CONTAINER ##### */
