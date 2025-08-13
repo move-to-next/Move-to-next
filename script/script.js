@@ -98,7 +98,6 @@ let header = document.querySelector('header');
 let gnbMenus = document.querySelectorAll('nav.gnb ul li span');
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
-    console.log(pageTop);
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
@@ -299,3 +298,5 @@ let skillBorder = document.querySelector('.skill-card-container svg.background r
 borderObserver.observe(aboutBorder[0]);
 borderObserver.observe(aboutBorder[1]);
 borderObserver.observe(skillBorder);
+
+let gnbMenuLines = document.querySelectorAll('.')

@@ -1,5 +1,6 @@
 @import url(../css/fonts.css);
 @import url(../css/reset.css);
+@import url(../css/responsive-tablet.css);
 body{
     width: 100%;
 }
@@ -108,6 +109,9 @@ nav.gnb ul li span{
 }
 nav.gnb ul li:hover span{
     font-weight: 800;
+}
+.header-inner .gnb-responsive{
+    display: none;
 }
 
 
