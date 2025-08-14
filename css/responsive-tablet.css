@@ -2,9 +2,6 @@
 @import url(../css/reset.css);
 
 @media(min-width: 768px) and (max-width: 1024px){
-    /* ##### COMMON STYLES ##### */
-
-
     /* ##### HEADER ##### */
     header .header-inner{
         align-items: flex-start;
@@ -61,14 +58,10 @@
         transition: 0.2s;
         background-color: rgba(0, 0, 0, 0.5);
     }
-
-
-    /* ##### OPENING CONTAINER ##### */
-
-
     /* ##### MAIN SECTION ##### */
-
-
+    .main-container{
+        height: 660vh;
+    }
     /* ### FIRST WRAP ### */
     .main-container .first-wrap .intro-title{
         width: 55%;
@@ -93,15 +86,7 @@
         line-height: 18px;
         transform: translateX(-10px);
     }
-    /* ### SECOND WRAP ### */
-    /* ### THIRD WRAP ### */
-    /* ### FOURTH WRAP ### */
-    /* ### FIVETH WRAP ### */
-    /* ### SIXTH WRAP ### */
-
-
-    /* ##### TOP BTN ##### */
-
-
-    /* ##### FOOTER ##### */
+    .first-wrap .bg-wrapper{
+        height: 110vh;
+    }
 }
