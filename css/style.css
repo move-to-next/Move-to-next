@@ -518,6 +518,9 @@ nav.gnb ul li:hover span{
     width: 100%;
     height: 100%;
 }
+.profile.overview .responsive-info{
+    display: none;
+}
 .profile svg.background{
     position: absolute;
     top: 0;
@@ -563,6 +566,7 @@ nav.gnb ul li:hover span{
 
 }
 .profile.introduce .top-info{
+    display: block;
     color: #fff;
     transition: 1s;
     transition-delay: 1s;

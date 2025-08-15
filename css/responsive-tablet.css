@@ -2,9 +2,20 @@
 @import url(../css/reset.css);
 
 @media(min-width: 768px) and (max-width: 1024px){
+    /* ##### COMMON STYLES ##### */
+    .menu .menu-inner{
+        justify-content: center;
+    }
+    .menu .menu-inner h2{
+        position: relative;
+        margin: 0;
+    }
+
+
     /* ##### HEADER ##### */
     header .header-inner{
         align-items: flex-start;
+        padding: 20px 10%;
     }
     header .header-inner h1.logo{
         width: 10vw;
@@ -88,5 +99,47 @@
     }
     .first-wrap .bg-wrapper{
         height: 110vh;
+    }
+
+
+    /* ### SECOND WRAP ### */
+    .menu-inner .profile-container{
+        flex-direction: column;
+    }
+    .menu-inner .profile-container .profile.overview{
+        flex-direction: row;
+        width: 100%;
+        gap: 5%;
+        align-items: center;
+    }
+    .profile-container .profile.overview .thum{
+        max-width: 20vw;
+        padding-top: 35%;
+    }
+    .profile-container .profile.overview .responsive-info{
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        color: #fff;
+    }
+    .profile-container .profile.overview .responsive-info h3{
+        font-family: 'Paperlogy';
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 16px;
+    }
+    .profile-container .profile.overview .responsive-info p{
+        font-size: 12px;
+    }
+    .profile-container .profile.introduce .top-info{
+        display: none;
+    }
+    .menu-inner .profile-container .profile.introduce{
+        flex: 1;
+    }
+    .profile.introduce .bottom-info .info{
+        min-width: 30vw;
     }
 }

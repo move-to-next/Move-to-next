@@ -98,6 +98,7 @@ let header = document.querySelector('header');
 let gnbMenus = document.querySelectorAll('nav.gnb ul li span');
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
+    console.log(pageTop);
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
@@ -131,6 +132,10 @@ topBtn.addEventListener('click', function(){
 
 
 window.addEventListener('wheel', function(el){
+    const mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
+    const tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
+    const desttopMedia = window.matchMedia("screen and (max-width: 2450px)");
+    let rect = document.querySelector("rect");
     // scroll counting
     if(el.deltaY>0){
         screenCount = Math.min(screenCount + 1, 6);
@@ -138,41 +143,123 @@ window.addEventListener('wheel', function(el){
         screenCount = Math.max(screenCount - 1, 0);
     }
     // section scrolling
-    if(screenCount == 0){
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }else if(screenCount == 1){
-        window.scrollTo({
-            top: 930,
-            behavior: 'smooth'
-        })
-    }else if(screenCount == 2){
-        window.scrollTo({
-            top: 1880,
-            behavior: 'smooth'
-        })
-    }else if(screenCount == 3){
-        window.scrollTo({
-            top: 2800,
-            behavior: 'smooth'
-        })
-    }else if(screenCount == 4){
-        window.scrollTo({
-            top: 3800,
-            behavior: 'smooth'
-        })
-    }else if(screenCount == 5){
-        window.scrollTo({
-            top: 4700,
-            behavior: 'smooth'
-        })
-    }else if(screenCount == 6){
-        window.scrollTo({
-            top: 4852,
-            behavior: 'smooth'
-        })
+    if(desttopMedia){
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 930,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 1880,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 2800,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 3800,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 4700,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 4852,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else if(tabletMedia){
+        rect.setAttribute('rx','4');
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 930,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 1880,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 2800,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 3800,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 4700,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 4852,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else if(mobileMedia){
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 930,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 1880,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 2800,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 3800,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 4700,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 4852,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else{
+        console.error('gnb error')
     }
 })
 
@@ -298,5 +385,3 @@ let skillBorder = document.querySelector('.skill-card-container svg.background r
 borderObserver.observe(aboutBorder[0]);
 borderObserver.observe(aboutBorder[1]);
 borderObserver.observe(skillBorder);
-
-let gnbMenuLines = document.querySelectorAll('.')
