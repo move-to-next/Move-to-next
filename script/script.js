@@ -1,31 +1,3 @@
-// window.addEventListener('DOMContentLoaded', (e) => {
-//     setTimeout(() =>{
-//         window.alert("해당 페이지는 PC사이즈 기준(1920 x 1080)으로 우선 작업되어, 추후 모바일 및 태블릿의 반응형을 추가할 예정입니다. 양해부탁드립니다.")
-//     }, 11000);
-
-//     // 접근성을 준수하여 생성한 반응형부재 알림텍스트
-//     const responsiveAlert = document.createElement('div');
-
-//     responsiveAlert.setAttribute('aria-live', 'polite');
-//     responsiveAlert.setAttribute('aria-atomic', 'true');
-//     responsiveAlert.style.cssText = `
-//         position: absolute;
-//         font-size: 1px;
-//         width: 1px;
-//         height: 1px;
-//         overflow: hidden;
-//         text-indent: -9999px;
-//     `;
-
-//     responsiveAlert.textContent = "해당 페이지는 PC사이즈 기준(1920 x 1080)으로 우선 작업되어, 추후 모바일 및 태블릿의 반응형을 추가할 예정입니다. 양해부탁드립니다.";
-//     document.body.appendChild(responsiveAlert);
-
-//     setTimeout(() => {
-//         document.body.removeChild(responsiveAlert);
-//     },15000);
-// })
-
-
 // SCREEN RESPONSIVE
 let mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
 let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
@@ -111,24 +83,68 @@ const topSwiper = new Swiper('.design-list.fourth.swiper', {
 
 
 let header = document.querySelector('header');
+let gnb = document.querySelector('nav.gnb');
 let gnbMenus = document.querySelectorAll('nav.gnb ul li span');
+let gnbIcons = document.querySelectorAll('.gnb-responsive svg');
+let gnbLines = document.querySelectorAll('.gnb-responsive svg line');
+let gnbBtn = document.querySelector('.gnb-responsive button');
+
+let isArrowChanged = false
+function arrowChange(){
+    if(!isArrowChanged){
+        gnbIcons[0].setAttribute('height', '20');
+        gnbIcons[0].setAttribute('viewBox', '0 0 200 1');
+        gnbIcons[1].setAttribute('height', '5');
+        gnbIcons[1].setAttribute('viewBox', '0 0 200 5');
+        gnbIcons[2].setAttribute('height', '20');
+        gnbIcons[2].setAttribute('viewBox', '0 0 200 1');
+        gnbLines[0].setAttribute('x1', '100');
+        gnbLines[0].setAttribute('y2', '200');
+        gnbLines[2].setAttribute('x1', '100');
+        gnbLines[2].setAttribute('y2', '-200');
+        gnb.classList.add('active');
+        gnbBtn.classList.add('active');
+        isArrowChanged = true;
+    }else{
+        gnbIcons.forEach((icon, index) => {
+            gnbIcons[index].setAttribute('height', '8');
+            gnbIcons[index].setAttribute('viewBox', '0 0 200 20');
+            gnbLines[index].setAttribute('x1', '0');
+            gnbLines[index].setAttribute('y2', '0');
+        });
+        gnb.classList.remove('active');
+        gnbBtn.classList.remove('active');
+        isArrowChanged = false;
+    }
+}
+
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
     console.log(pageTop);
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
+            gnb.style.backgroundColor = '#cccccc';
             header.style.backgroundColor = '#ffffff';
             menu.style.color = '#000';
             topBtn.style.transform = 'translate(-40%, -40%)';
+            gnbLines.forEach((line, index) => {
+                gnbLines[index].setAttribute('stroke', '#333');
+            })
         }
         else{
+            gnb.style.backgroundColor = '#333333';
             header.style.backgroundColor = 'transparent';
             menu.style.color = '#fff';
             topBtn.style.transform = 'translate(100%, -40%)';
+            gnbLines.forEach((line, index) => {
+                gnbLines[index].setAttribute('stroke', 'white');
+            })
         }
     })
 })
+gnbBtn.addEventListener('click', arrowChange);
+
 
 
 let openBg = document.querySelector('.opening-container');
@@ -207,22 +223,22 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 930,
+                top: 900,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 1880,
+                top: 1850,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 2800,
+                top: 2820,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 3800,
+                top: 3750,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
@@ -232,7 +248,7 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 4852,
+                top: 4820,
                 behavior: 'smooth'
             })
         }
@@ -306,38 +322,108 @@ let projectGnb = document.querySelector('nav.gnb ul li.project');
 let designGnb = document.querySelector('nav.gnb ul li.design');
 let contactGnb = document.querySelector('nav.gnb ul li.contact');
 aboutGnb.addEventListener('click', function(){
-    window.scrollTo({
+    if(mobileMedia.matches){
+        window.scrollTo({
+        top: 844,
+        behavior: 'smooth'
+        })
+    }
+    else if(tabletMedia.matches){
+        window.scrollTo({
+        top: 900,
+        behavior: 'smooth'
+        })
+    }
+    else{
+        window.scrollTo({
         top: 926,
         behavior: 'smooth'
-    })
+        })
+    }
     screenCount = 1;
 })
 skillGnb.addEventListener('click', function(){
-    window.scrollTo({
+    if(mobileMedia.matches){
+        window.scrollTo({
+        top: 1820,
+        behavior: 'smooth'
+        })
+    }
+    else if(tabletMedia.matches){
+        window.scrollTo({
+        top: 1850,
+        behavior: 'smooth'
+        })
+    }
+    else{
+        window.scrollTo({
         top: 1880,
         behavior: 'smooth'
     })
+    }
     screenCount = 2;
 })
 projectGnb.addEventListener('click', function(){
-    window.scrollTo({
-        top: 2800,
+    if(mobileMedia.matches){
+        window.scrollTo({
+        top: 2760,
+        behavior: 'smooth'
+        })
+    }
+    else if(tabletMedia.matches){
+        window.scrollTo({
+        top: 2820,
+        behavior: 'smooth'
+        })
+    }
+    else{
+        window.scrollTo({
+        top: 2880,
         behavior: 'smooth'
     })
+    }
     screenCount = 3;
 })
 designGnb.addEventListener('click', function(){
-    window.scrollTo({
+    if(mobileMedia.matches){
+        window.scrollTo({
+        top: 3700,
+        behavior: 'smooth'
+        })
+    }
+    else if(tabletMedia.matches){
+        window.scrollTo({
+        top: 3750,
+        behavior: 'smooth'
+        })
+    }
+    else{
+        window.scrollTo({
         top: 3800,
         behavior: 'smooth'
     })
+    }
     screenCount = 4;
 })
 contactGnb.addEventListener('click', function(){
-    window.scrollTo({
+    if(mobileMedia.matches){
+        window.scrollTo({
+        top: 4700,
+        behavior: 'smooth'
+        })
+    }
+    else if(tabletMedia.matches){
+        window.scrollTo({
+        top: 4700,
+        behavior: 'smooth'
+        })
+    }
+    else{
+        window.scrollTo({
         top: 4700,
         behavior: 'smooth'
     })
+    }
     screenCount = 5;
 })
 
