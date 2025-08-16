@@ -1,29 +1,35 @@
-window.addEventListener('DOMContentLoaded', (e) => {
-    setTimeout(() =>{
-        window.alert("해당 페이지는 PC사이즈 기준(1920 x 1080)으로 우선 작업되어, 추후 모바일 및 태블릿의 반응형을 추가할 예정입니다. 양해부탁드립니다.")
-    }, 11000);
+// window.addEventListener('DOMContentLoaded', (e) => {
+//     setTimeout(() =>{
+//         window.alert("해당 페이지는 PC사이즈 기준(1920 x 1080)으로 우선 작업되어, 추후 모바일 및 태블릿의 반응형을 추가할 예정입니다. 양해부탁드립니다.")
+//     }, 11000);
 
-    // 접근성을 준수하여 생성한 반응형부재 알림텍스트
-    const responsiveAlert = document.createElement('div');
+//     // 접근성을 준수하여 생성한 반응형부재 알림텍스트
+//     const responsiveAlert = document.createElement('div');
 
-    responsiveAlert.setAttribute('aria-live', 'polite');
-    responsiveAlert.setAttribute('aria-atomic', 'true');
-    responsiveAlert.style.cssText = `
-        position: absolute;
-        font-size: 1px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        text-indent: -9999px;
-    `;
+//     responsiveAlert.setAttribute('aria-live', 'polite');
+//     responsiveAlert.setAttribute('aria-atomic', 'true');
+//     responsiveAlert.style.cssText = `
+//         position: absolute;
+//         font-size: 1px;
+//         width: 1px;
+//         height: 1px;
+//         overflow: hidden;
+//         text-indent: -9999px;
+//     `;
 
-    responsiveAlert.textContent = "해당 페이지는 PC사이즈 기준(1920 x 1080)으로 우선 작업되어, 추후 모바일 및 태블릿의 반응형을 추가할 예정입니다. 양해부탁드립니다.";
-    document.body.appendChild(responsiveAlert);
+//     responsiveAlert.textContent = "해당 페이지는 PC사이즈 기준(1920 x 1080)으로 우선 작업되어, 추후 모바일 및 태블릿의 반응형을 추가할 예정입니다. 양해부탁드립니다.";
+//     document.body.appendChild(responsiveAlert);
 
-    setTimeout(() => {
-        document.body.removeChild(responsiveAlert);
-    },15000);
-})
+//     setTimeout(() => {
+//         document.body.removeChild(responsiveAlert);
+//     },15000);
+// })
+
+
+// SCREEN RESPONSIVE
+let mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
+let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
+let desttopMedia = window.matchMedia("screen and (max-width: 2450px)");
 
 let screenCount = 0;
 
@@ -50,11 +56,21 @@ function leaveCard(index){
     cards[index].classList.remove('active');
     infos[index].classList.remove('active');
 }
+function toggleCard(index){
+    hoverTexts[index].classList.toggle('active');
+    cards[index].classList.toggle('active');
+    infos[index].classList.toggle('active');
+}
 
 
 cards.forEach((card, index)=>{
-    card.addEventListener('mouseover', () => hoverCard(index));
-    card.addEventListener('mouseleave', () => leaveCard(index));
+    if(tabletMedia.matches || mobileMedia.matches){
+        card.addEventListener('click', () => toggleCard(index));
+    }
+    else{
+        card.addEventListener('mouseover', () => hoverCard(index));
+        card.addEventListener('mouseleave', () => leaveCard(index));
+    }
 })
 infos.forEach((info, index)=>{
     info.addEventListener('mouseover', () => hoverCard(index));
@@ -131,19 +147,18 @@ topBtn.addEventListener('click', function(){
 })
 
 
-window.addEventListener('wheel', function(el){
-    const mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
-    const tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
-    const desttopMedia = window.matchMedia("screen and (max-width: 2450px)");
-    let rect = document.querySelector("rect");
+window.addEventListener('wheel', function(event){
+    console.log('wheel 이벤트 발생, deltaY:', event.deltaY);
+    let rects = document.querySelectorAll("svg rect");
     // scroll counting
-    if(el.deltaY>0){
+    if(event.deltaY > 0){
         screenCount = Math.min(screenCount + 1, 6);
     }else{
         screenCount = Math.max(screenCount - 1, 0);
     }
     // section scrolling
-    if(desttopMedia){
+    if(mobileMedia.matches){
+        console.log("mobileMedia");
         if(screenCount == 0){
             window.scrollTo({
                 top: 0,
@@ -181,8 +196,10 @@ window.addEventListener('wheel', function(el){
             })
         }
     }
-    else if(tabletMedia){
-        rect.setAttribute('rx','4');
+    else if(tabletMedia.matches){
+        rects.forEach((rect, index) => {
+            rects[index].setAttribute('rx','4');
+        })
         if(screenCount == 0){
             window.scrollTo({
                 top: 0,
@@ -220,7 +237,8 @@ window.addEventListener('wheel', function(el){
             })
         }
     }
-    else if(mobileMedia){
+    else if(desttopMedia.matches){
+        console.log("desttopMedia");
         if(screenCount == 0){
             window.scrollTo({
                 top: 0,
@@ -370,7 +388,7 @@ fadeObserver.observe(contactTitle[1]);
 fadeObserver.observe(contactTitle[2]);
 fadeObserver.observe(aboutObject[0]);
 fadeObserver.observe(aboutObject[1]);
-fadeObserver.observe(aboutObject[2]);
+fadeObserver.observe(aboutObject[3]);
 fadeObserver.observe(skillObject[0]);
 fadeObserver.observe(skillObject[1]);
 fadeObserver.observe(designObject[0]);

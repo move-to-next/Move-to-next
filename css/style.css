@@ -334,20 +334,21 @@ nav.gnb ul li:hover span{
     animation: cursor 1s linear infinite;
     animation-delay: 6.5s;
 }
-.main-title .first{
+.main-title span{
     animation: blur 4.2s ease-out;
     animation-fill-mode: forwards;
+}
+.main-title .first{
     animation-delay: 1s;
 }
 .main-title .second{
-    animation: blur 4.2s ease-out;
-    animation-fill-mode: forwards;
     animation-delay: 1.5s;
 }
 .main-title .third{
-    animation: blur 4.2s ease-out;
-    animation-fill-mode: forwards;
     animation-delay: 2s;
+}
+.main-title .fourth{
+    animation-delay: 2.5s;
 }
 @keyframes blur{
     0%{
