@@ -184,4 +184,79 @@
     .skill-card-container .card-wrap .card .card-hover{
         display: none;
     }
+
+
+    /* ### FOURTH WRAP ### */
+    .fourth-wrap .menu.project .menu-inner{
+        flex-direction: column;
+    }
+    .fourth-wrap .menu.project .menu-inner .project-title{
+        top: 0;
+    }
+    .menu.project .menu-inner .project-list{
+        height: 90%;
+    }
+    .project-thums .responsive img.pc{
+        left: 38%;
+        max-width: 22vw;
+    }
+    .project-thums .responsive img.tablet{
+        top: 56%;
+        left: 83%;
+        max-width: 9vw;
+    }
+    .project-thums .responsive img.mobile{
+        top: 58%;
+        left: 62%;
+        max-width: 6vw;
+    }
+    ul li.clone-project .project-thums .responsive img{
+        left: 50%;
+        max-width: 26vw;
+    }
+
+
+    /* ### FIVETH WRAP ### */
+    .fifth-wrap .menu.design .menu-inner .design-box{
+        height: 70%;
+    }
+    .menu-inner .design-box .design-wrap{
+        height: 100%;
+    }
+    .design-lists .design-list .design-info{
+        padding: 0 10%;
+        text-align: center;
+        gap: 15px;
+    }
+    .design-lists .design-list .design-info span.text{
+        word-break: keep-all;
+    }
+    .design-lists .design-list .design-info .logo img{
+        object-fit: contain;
+        transform: scale(1.2);
+    }
+    .left-bottom .design-list.third .design-card img.design-bg{
+        transform: translate(5%, 6%) scale(1.2);
+    }
+    .banner-wrap .banner.first .fullImage:hover img{
+        transform: translateY(-77%);
+    }
+    .banner-wrap .banner.second.one .fullImage:hover img{
+        transform: translateY(-51%);
+    }
+    .banner-wrap .banner.second.two .fullImage:hover img{
+        transform: translateY(-2%);
+    }
+    .banner-wrap .banner.third .fullImage:hover img{
+        transform: translateY(-34%);
+    }
+    .banner-wrap .banner.fourth .fullImage:hover img{
+        transform: translateY(-86.8%);
+    }
+    .banner-wrap .banner.fifth.one .fullImage:hover img{
+        transform: translateY(-61%);
+    }
+    .banner-wrap .banner.fifth.two .fullImage:hover img{
+        transform: translateY(-16%);
+    }
 }
