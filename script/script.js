@@ -1,6 +1,6 @@
 // SCREEN RESPONSIVE
 let mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
-let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
+let tabletMedia = window.matchMedia("(min-width: 895px) and (max-width: 1024px)");
 let smallTabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 896px)");
 let desttopMedia = window.matchMedia("screen and (max-width: 2450px)");
 
@@ -41,7 +41,7 @@ function toggleCard(index){
 
 // 태블릿 또는 모바일 화면일떄 마우스오버대신 클릭,터치시 동작.
 cards.forEach((card, index)=>{
-    if(tabletMedia.matches || mobileMedia.matches){
+    if(tabletMedia.matches || smallTabletMedia.matches || mobileMedia.matches){
         card.addEventListener('click', () => toggleCard(index));
     }
     else{
@@ -143,7 +143,7 @@ window.addEventListener('scroll', function(){
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', '#333');
             })
-            if(tabletMedia.matches){
+            if(tabletMedia.matches || smallTabletMedia.matches){
                 gnb.style.backgroundColor = '#cccccc';
             }
             else{
@@ -158,7 +158,7 @@ window.addEventListener('scroll', function(){
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', 'white');
             })
-            if(tabletMedia.matches){
+            if(tabletMedia.matches || smallTabletMedia.matches){
                 gnb.style.backgroundColor = '#333333';
             }
             else{
@@ -191,13 +191,13 @@ topBtn.addEventListener('click', function(){
 window.addEventListener('wheel', function(event){
     console.log('wheel 이벤트 발생, deltaY:', event.deltaY);
     let rects = document.querySelectorAll("svg rect");
-    // scroll counting
+    // 스크롤할때마다 카운트 1씩 증감함.
     if(event.deltaY > 0){
         screenCount = Math.min(screenCount + 1, 6);
     }else{
         screenCount = Math.max(screenCount - 1, 0);
     }
-    // section scrolling
+    // 반응형 기기에 따른 스크롤링 범위 설정
     if(mobileMedia.matches){
         console.log("mobileMedia");
         if(screenCount == 0){
@@ -237,6 +237,47 @@ window.addEventListener('wheel', function(event){
             })
         }
     }
+    else if(smallTabletMedia.matches){
+        rects.forEach((rect, index) => {
+            rects[index].setAttribute('rx','4');
+        })
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 830,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 1700,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 2570,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 3440,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 4310,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 4411,
+                behavior: 'smooth'
+            })
+        }
+    }
     else if(tabletMedia.matches){
         rects.forEach((rect, index) => {
             rects[index].setAttribute('rx','4');
@@ -248,32 +289,32 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 900,
+                top: 820,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 1850,
+                top: 1700,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 2820,
+                top: 2570,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 3750,
+                top: 3440,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 4700,
+                top: 4310,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 4820,
+                top: 4411,
                 behavior: 'smooth'
             })
         }
@@ -355,9 +396,15 @@ aboutGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(smallTabletMedia.matches){
+        window.scrollTo({
+        top: 830,
+        behavior: 'smooth'
+        })
+    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 1080,
+        top: 820,
         behavior: 'smooth'
         })
     }
@@ -376,9 +423,15 @@ skillGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(smallTabletMedia.matches){
+        window.scrollTo({
+        top: 1700,
+        behavior: 'smooth'
+        })
+    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 1850,
+        top: 1700,
         behavior: 'smooth'
         })
     }
@@ -397,9 +450,15 @@ projectGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(smallTabletMedia.matches){
+        window.scrollTo({
+        top: 2570,
+        behavior: 'smooth'
+        })
+    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 2820,
+        top: 2570,
         behavior: 'smooth'
         })
     }
@@ -418,9 +477,15 @@ designGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(smallTabletMedia.matches){
+        window.scrollTo({
+        top: 3440,
+        behavior: 'smooth'
+        })
+    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 3750,
+        top: 3440,
         behavior: 'smooth'
         })
     }
@@ -439,15 +504,21 @@ contactGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(smallTabletMedia.matches){
+        window.scrollTo({
+        top: 4310,
+        behavior: 'smooth'
+        })
+    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 4700,
+        top: 4310,
         behavior: 'smooth'
         })
     }
     else{
         window.scrollTo({
-        top: 4700,
+        top: 4411,
         behavior: 'smooth'
     })
     }
