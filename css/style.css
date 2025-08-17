@@ -1,5 +1,6 @@
 @import url(../css/fonts.css);
 @import url(../css/reset.css);
+@import url(../css/responsive-mobile.css);
 @import url(../css/responsive-tablet.css);
 body{
     width: 100%;
