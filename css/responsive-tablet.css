@@ -100,6 +100,9 @@
     .intro-title .title-bottom .sub-text{
         margin-top: 8px;
     }
+    .intro-title .title-top .title-arrow img {
+        width: 28px;
+    }
     .title-bottom .sub-text .text{
         font-size: 14px;
     }
@@ -304,5 +307,38 @@
     }
     .contact-box ul li.contact-list p.title::after{
         display: none;
+    }
+}
+@media(min-width: 768px) and (max-width: 840px){
+    .intro-title .title-top span{
+        font-size: 34px;
+    }
+    .intro-title .title-bottom .main-title span{
+        font-size: 40px;
+    }
+    .title-bottom .sub-text .text{
+        font-size: 11px;
+    }
+}
+@media(min-width: 841px) and (max-width: 920px){
+    .intro-title .title-top span{
+        font-size: 36px;
+    }
+    .intro-title .title-bottom .main-title span{
+        font-size: 44px;
+    }
+    .title-bottom .sub-text .text{
+        font-size: 12px;
+    }
+}
+@media(min-width: 921px) and (max-width: 1000px){
+    .intro-title .title-top span{
+        font-size: 38px;
+    }
+    .intro-title .title-bottom .main-title span{
+        font-size: 48px;
+    }
+    .title-bottom .sub-text .text{
+        font-size: 13px;
     }
 }
