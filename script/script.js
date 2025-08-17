@@ -1,14 +1,17 @@
 // SCREEN RESPONSIVE
 let mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
 let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
+let smallTabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 896px)");
 let desttopMedia = window.matchMedia("screen and (max-width: 2450px)");
 
 let screenCount = 0;
 
+// SKILLS 섹션 카드 부분
 let cards = document.querySelectorAll('.card-wrap .card');
 let infos = document.querySelectorAll('.info-wrap .info');
 let hoverTexts = document.querySelectorAll('.card .card-hover');
 
+// 마우스 오버 동작함수
 function hoverCard(index){
     cards.forEach(card=>{
         card.classList.remove('active');
@@ -23,18 +26,20 @@ function hoverCard(index){
     cards[index].classList.add('active');
     infos[index].classList.add('active');
 }
+// 마우스 벗어날때 동작함수
 function leaveCard(index){
     hoverTexts[index].classList.remove('active');
     cards[index].classList.remove('active');
     infos[index].classList.remove('active');
 }
+// 토글 동작함수
 function toggleCard(index){
     hoverTexts[index].classList.toggle('active');
     cards[index].classList.toggle('active');
     infos[index].classList.toggle('active');
 }
 
-
+// 태블릿 또는 모바일 화면일떄 마우스오버대신 클릭,터치시 동작.
 cards.forEach((card, index)=>{
     if(tabletMedia.matches || mobileMedia.matches){
         card.addEventListener('click', () => toggleCard(index));
@@ -50,6 +55,7 @@ infos.forEach((info, index)=>{
 })
 
 
+// SWIPER.JS 로직
 const projectSwiper = new Swiper('.project-list-wrap.swiper', {
     direction: 'horizontal',
     loop: true,
@@ -82,6 +88,7 @@ const topSwiper = new Swiper('.design-list.fourth.swiper', {
 })
 
 
+// HEADER 및 GNB DOM요소
 let header = document.querySelector('header');
 let gnb = document.querySelector('nav.gnb');
 let gnbMenus = document.querySelectorAll('nav.gnb ul li span');
@@ -89,7 +96,10 @@ let gnbIcons = document.querySelectorAll('.gnb-responsive svg');
 let gnbLines = document.querySelectorAll('.gnb-responsive svg line');
 let gnbBtn = document.querySelector('.gnb-responsive button');
 
+
+// 반응형화면의 GNB아이콘 화살표로 변경
 let isArrowChanged = false
+// 화살표아이콘 변경 함수
 function arrowChange(){
     if(!isArrowChanged){
         gnbIcons[0].setAttribute('height', '20');
@@ -117,7 +127,10 @@ function arrowChange(){
         isArrowChanged = false;
     }
 }
+// 반응형 GNB메뉴 클릭시 화살표아이콘 변경 함수 작용.
+gnbBtn.addEventListener('click', arrowChange);
 
+// 브라우저 스크롤 다운 시 헤더 색상변경, TOP BUTTON 노출.
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
     console.log(pageTop);
@@ -154,16 +167,16 @@ window.addEventListener('scroll', function(){
         }
     })
 })
-gnbBtn.addEventListener('click', arrowChange);
 
 
-
+// 4.5초(4500밀리초)후 처음 인트로 애니메이션 요소 DISPLAY NONE(가리기)
 let openBg = document.querySelector('.opening-container');
 setTimeout(()=>{
     openBg.style.display = 'none';
 }, 4500)
 
 
+// TOP BUTTON 클릭 시 상단으로 이동
 let topBtn = document.querySelector('.top-btn');
 topBtn.addEventListener('click', function(){
     window.scrollTo({
@@ -174,6 +187,7 @@ topBtn.addEventListener('click', function(){
 })
 
 
+// 마우스 스크롤 시 각 섹션 별로 카운트 적용 후 부드럽게 넘어가는 로직.
 window.addEventListener('wheel', function(event){
     console.log('wheel 이벤트 발생, deltaY:', event.deltaY);
     let rects = document.querySelectorAll("svg rect");
@@ -309,6 +323,7 @@ window.addEventListener('wheel', function(event){
 })
 
 
+// 디자인 섹션의 배너 소개 박스 클릭 시 이벤트 배너가 팝업 창으로 노출. (+ 닫기 버튼 클릭시 닫힘.)
 let bannerBg = document.querySelector('.banner-wrap');
 let designCards = document.querySelectorAll('.design-list .design-card');
 let banners = document.querySelectorAll('.banner-wrap .banner');
@@ -327,6 +342,7 @@ closeBtns.forEach((btn, index) => {
 })
 
 
+// GNB의 메뉴 클릭 시 각 섹션으로 섹션 스크롤링 되며 이동.
 let aboutGnb = document.querySelector('nav.gnb ul li.about');
 let skillGnb = document.querySelector('nav.gnb ul li.skill');
 let projectGnb = document.querySelector('nav.gnb ul li.project');
@@ -439,6 +455,8 @@ contactGnb.addEventListener('click', function(){
 })
 
 
+// 브라우저 내에 특정 요소의 노출이 감지되면, 동작되어질 로직.
+// slideObserver - 노출이 감지되면 좌 -> 우 로 슬라이드 이동.
 let slideObserver = new IntersectionObserver((slide) => {
     slide.forEach((element)=>{
         if(element.isIntersecting){
@@ -449,6 +467,7 @@ let slideObserver = new IntersectionObserver((slide) => {
         }
     })
 })
+// fadeObserver - 노출이 감지되면 점점 선명해짐.
 let fadeObserver = new IntersectionObserver((fade) => {
     fade.forEach((element)=>{
         if(element.isIntersecting){
@@ -458,6 +477,7 @@ let fadeObserver = new IntersectionObserver((fade) => {
         }
     })
 })
+// borderObserver - SVG요소의 stroke 속성값을 활용해 보더가 시계방향으로 그려짐.
 let borderObserver = new IntersectionObserver((about) => {
     about.forEach((element)=>{
         if(element.isIntersecting){
@@ -468,6 +488,7 @@ let borderObserver = new IntersectionObserver((about) => {
     })
 })
 
+// slideObserver 적용할 DOM요소 선택.
 let menuTitle = document.querySelectorAll('.menu-inner h2 span');
 slideObserver.observe(menuTitle[0]);
 slideObserver.observe(menuTitle[1]);
@@ -475,7 +496,7 @@ slideObserver.observe(menuTitle[2]);
 slideObserver.observe(menuTitle[3]);
 slideObserver.observe(menuTitle[4]);
 
-
+// fadeObserver 적용할 DOM요소 선택.
 let contactTitle = document.querySelectorAll('.contact-title span');
 let aboutObject = document.querySelectorAll('.profile>div');
 let skillObject = document.querySelectorAll('.skill-card-container>div');
@@ -494,7 +515,7 @@ fadeObserver.observe(contactObject[0]);
 fadeObserver.observe(contactObject[1]);
 fadeObserver.observe(contactObject[2]);
 
-
+// borderObserver 적용할 DOM요소 선택.
 let aboutBorder = document.querySelectorAll('.profile svg.background rect.border');
 let skillBorder = document.querySelector('.skill-card-container svg.background rect.border');
 borderObserver.observe(aboutBorder[0]);
