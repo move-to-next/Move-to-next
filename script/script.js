@@ -234,7 +234,7 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 1080,
+                top: 900,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
