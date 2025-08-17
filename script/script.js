@@ -124,21 +124,33 @@ window.addEventListener('scroll', function(){
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
-            gnb.style.backgroundColor = '#cccccc';
             header.style.backgroundColor = '#ffffff';
             menu.style.color = '#000';
             topBtn.style.transform = 'translate(-40%, -40%)';
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', '#333');
             })
+            if(tabletMedia.matches){
+                gnb.style.backgroundColor = '#cccccc';
+            }
+            else{
+                gnb.style.backgroundColor = 'transparent';
+            }
         }
         else{
+            gnb.style.backgroundColor = 'transparent';
             header.style.backgroundColor = 'transparent';
             menu.style.color = '#fff';
             topBtn.style.transform = 'translate(100%, -40%)';
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', 'white');
             })
+            if(tabletMedia.matches){
+                gnb.style.backgroundColor = '#333333';
+            }
+            else{
+                gnb.style.backgroundColor = 'transparent';
+            }
         }
     })
 })
@@ -222,7 +234,7 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 900,
+                top: 1080,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
@@ -329,7 +341,7 @@ aboutGnb.addEventListener('click', function(){
     }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 900,
+        top: 1080,
         behavior: 'smooth'
         })
     }
