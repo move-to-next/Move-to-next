@@ -133,7 +133,6 @@ window.addEventListener('scroll', function(){
             })
         }
         else{
-            gnb.style.backgroundColor = '#333333';
             header.style.backgroundColor = 'transparent';
             menu.style.color = '#fff';
             topBtn.style.transform = 'translate(100%, -40%)';
