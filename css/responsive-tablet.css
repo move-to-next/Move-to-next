@@ -319,6 +319,9 @@
     .title-bottom .sub-text .text{
         font-size: 11px;
     }
+    li.contact-list span.text{
+        font-size: 32px;
+    }
 }
 @media(min-width: 841px) and (max-width: 920px){
     .intro-title .title-top span{
@@ -330,6 +333,9 @@
     .title-bottom .sub-text .text{
         font-size: 12px;
     }
+    li.contact-list span.text{
+        font-size: 34px;
+    }
 }
 @media(min-width: 921px) and (max-width: 1000px){
     .intro-title .title-top span{
@@ -340,5 +346,8 @@
     }
     .title-bottom .sub-text .text{
         font-size: 13px;
+    }
+    li.contact-list span.text{
+        font-size: 36px;
     }
 }
