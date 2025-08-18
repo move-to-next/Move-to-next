@@ -1,7 +1,6 @@
 // SCREEN RESPONSIVE
 let mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
-let tabletMedia = window.matchMedia("(min-width: 895px) and (max-width: 1024px)");
-let smallTabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 896px)");
+let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
 let desttopMedia = window.matchMedia("screen and (max-width: 2450px)");
 
 let screenCount = 0;
@@ -41,12 +40,14 @@ function toggleCard(index){
 
 // 태블릿 또는 모바일 화면일떄 마우스오버대신 클릭,터치시 동작.
 cards.forEach((card, index)=>{
-    if(tabletMedia.matches || smallTabletMedia.matches || mobileMedia.matches){
+    if(tabletMedia.matches || mobileMedia.matches){
         card.addEventListener('click', () => toggleCard(index));
+        console.log("화면 작음");
     }
     else{
         card.addEventListener('mouseover', () => hoverCard(index));
         card.addEventListener('mouseleave', () => leaveCard(index));
+        console.log("화면 큼");
     }
 })
 infos.forEach((info, index)=>{
@@ -143,7 +144,7 @@ window.addEventListener('scroll', function(){
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', '#333');
             })
-            if(tabletMedia.matches || smallTabletMedia.matches){
+            if(tabletMedia.matches){
                 gnb.style.backgroundColor = '#cccccc';
             }
             else{
@@ -158,7 +159,7 @@ window.addEventListener('scroll', function(){
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', 'white');
             })
-            if(tabletMedia.matches || smallTabletMedia.matches){
+            if(tabletMedia.matches){
                 gnb.style.backgroundColor = '#333333';
             }
             else{
@@ -237,47 +238,6 @@ window.addEventListener('wheel', function(event){
             })
         }
     }
-    else if(smallTabletMedia.matches){
-        rects.forEach((rect, index) => {
-            rects[index].setAttribute('rx','4');
-        })
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 830,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 1700,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 2570,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 3440,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 4310,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 4411,
-                behavior: 'smooth'
-            })
-        }
-    }
     else if(tabletMedia.matches){
         rects.forEach((rect, index) => {
             rects[index].setAttribute('rx','4');
@@ -289,32 +249,32 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 820,
+                top: 900,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 1700,
+                top: 1850,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 2570,
+                top: 2800,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 3440,
+                top: 3740,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 4310,
+                top: 4710,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 4411,
+                top: 4830,
                 behavior: 'smooth'
             })
         }
@@ -396,15 +356,9 @@ aboutGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
-    else if(smallTabletMedia.matches){
-        window.scrollTo({
-        top: 830,
-        behavior: 'smooth'
-        })
-    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 820,
+        top: 900,
         behavior: 'smooth'
         })
     }
@@ -423,15 +377,9 @@ skillGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
-    else if(smallTabletMedia.matches){
-        window.scrollTo({
-        top: 1700,
-        behavior: 'smooth'
-        })
-    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 1700,
+        top: 1850,
         behavior: 'smooth'
         })
     }
@@ -450,15 +398,9 @@ projectGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
-    else if(smallTabletMedia.matches){
-        window.scrollTo({
-        top: 2570,
-        behavior: 'smooth'
-        })
-    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 2570,
+        top: 2800,
         behavior: 'smooth'
         })
     }
@@ -477,15 +419,9 @@ designGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
-    else if(smallTabletMedia.matches){
-        window.scrollTo({
-        top: 3440,
-        behavior: 'smooth'
-        })
-    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 3440,
+        top: 3740,
         behavior: 'smooth'
         })
     }
@@ -504,21 +440,15 @@ contactGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
-    else if(smallTabletMedia.matches){
-        window.scrollTo({
-        top: 4310,
-        behavior: 'smooth'
-        })
-    }
     else if(tabletMedia.matches){
         window.scrollTo({
-        top: 4310,
+        top: 4710,
         behavior: 'smooth'
         })
     }
     else{
         window.scrollTo({
-        top: 4411,
+        top: 4830,
         behavior: 'smooth'
     })
     }

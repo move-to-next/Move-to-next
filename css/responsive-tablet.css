@@ -322,6 +322,18 @@
     li.contact-list span.text{
         font-size: 32px;
     }
+    .skill-card-container [class*="-wrap"] .card{
+        transform: translateY(110%);
+    }
+    .skill-card-container [class*="-wrap"] .info{
+        transform: translateY(-98%);
+    }
+    .skill-card-container [class*="-wrap"] .card.active{
+        transform: translateY(110%);
+    }
+    .skill-card-container [class*="-wrap"] .info.active{
+        transform: translateY(-98%);
+    }
 }
 @media(min-width: 841px) and (max-width: 920px){
     .intro-title .title-top span{
@@ -335,6 +347,18 @@
     }
     li.contact-list span.text{
         font-size: 34px;
+    }
+    .skill-card-container [class*="-wrap"] .card{
+        transform: translateY(105%);
+    }
+    .skill-card-container [class*="-wrap"] .info{
+        transform: translateY(-102%);
+    }
+    .skill-card-container [class*="-wrap"] .card.active{
+        transform: translateY(105%);
+    }
+    .skill-card-container [class*="-wrap"] .info.active{
+        transform: translateY(-102%);
     }
 }
 @media(min-width: 921px) and (max-width: 1024px){
