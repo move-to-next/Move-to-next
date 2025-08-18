@@ -42,12 +42,10 @@ function toggleCard(index){
 cards.forEach((card, index)=>{
     if(tabletMedia.matches || mobileMedia.matches){
         card.addEventListener('click', () => toggleCard(index));
-        console.log("화면 작음");
     }
     else{
         card.addEventListener('mouseover', () => hoverCard(index));
         card.addEventListener('mouseleave', () => leaveCard(index));
-        console.log("화면 큼");
     }
 })
 infos.forEach((info, index)=>{
@@ -116,6 +114,7 @@ function arrowChange(){
         gnb.classList.add('active');
         gnbBtn.classList.add('active');
         isArrowChanged = true;
+        console.log("함수 실행됨");
     }else{
         gnbIcons.forEach((icon, index) => {
             gnbIcons[index].setAttribute('height', '8');
@@ -126,6 +125,7 @@ function arrowChange(){
         gnb.classList.remove('active');
         gnbBtn.classList.remove('active');
         isArrowChanged = false;
+        console.log("함수 실행안됨");
     }
 }
 // 반응형 GNB메뉴 클릭시 화살표아이콘 변경 함수 작용.
@@ -134,7 +134,7 @@ gnbBtn.addEventListener('click', arrowChange);
 // 브라우저 스크롤 다운 시 헤더 색상변경, TOP BUTTON 노출.
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
-    console.log(pageTop);
+    // console.log(pageTop);
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
@@ -185,6 +185,8 @@ topBtn.addEventListener('click', function(){
         behavior: 'smooth'
     })
     screenCount = 0;
+    isArrowChanged = true;
+    arrowChange();
 })
 
 
@@ -369,6 +371,8 @@ aboutGnb.addEventListener('click', function(){
         })
     }
     screenCount = 1;
+    isArrowChanged = true;
+    arrowChange();
 })
 skillGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
@@ -390,6 +394,8 @@ skillGnb.addEventListener('click', function(){
     })
     }
     screenCount = 2;
+    isArrowChanged = true;
+    arrowChange();
 })
 projectGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
@@ -411,6 +417,8 @@ projectGnb.addEventListener('click', function(){
     })
     }
     screenCount = 3;
+    isArrowChanged = true;
+    arrowChange();
 })
 designGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
@@ -432,6 +440,8 @@ designGnb.addEventListener('click', function(){
     })
     }
     screenCount = 4;
+    isArrowChanged = true;
+    arrowChange();
 })
 contactGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
@@ -453,6 +463,8 @@ contactGnb.addEventListener('click', function(){
     })
     }
     screenCount = 5;
+    isArrowChanged = true;
+    arrowChange();
 })
 
 
