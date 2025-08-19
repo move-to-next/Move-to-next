@@ -216,18 +216,30 @@
         opacity: 0;
         transform: translateY(100%);
     }
+    .skill-card-container [class*="-wrap"] .card .overview span{
+        font-size: 14px;
+    }
     .skill-card-container [class*="-wrap"] .info{
         min-width: 30%;
         height: 52%;
-        padding: 2vh 2.5%;
+        padding: 2vh 2%;
         border-radius: 10px;
         transform: translateY(-106%);
     }
     .skill-card-container [class*="-wrap"] .info.active{
         height: 52%;
-        padding: 2vh 2.5%;
+        padding: 2vh 2%;
         border-radius: 10px;
         transform: translateY(-106%);
+    }
+    .skill-card-container [class*="-wrap"] .info .overview{
+        min-height: 12vh;
+    }
+    .skill-card-container [class*="-wrap"] .info .overview .title{
+        font-size: 10px;
+    }
+    .skill-card-container [class*="-wrap"] .info .overview .text{
+        font-size: 10px;
     }
     .skill-card-container .card-wrap .card .card-hover{
         display: none;
@@ -243,14 +255,28 @@
         top: 0;
         justify-content: center;
     }
+    .menu-inner .project-title .title-text{
+        font-size: 16px;
+        word-break: keep-all;
+    }
     .menu.project .menu-inner .project-list{
-        height: 84%;
+        height: 75%;
     }
     .menu.project .menu-inner .project-list .project-list-wrap{
         height: 100%;
     }
     .project-list-wrap ul li .project-thums{
-        height: 32vh;
+        height: 30vh;
+        align-items: center;
+    }
+    .project-list-wrap :is(.swiper-button-prev, .swiper-button-next)::after{
+        transform: scale(0.4);
+    }
+    .project-list-wrap .swiper-button-prev{
+        transform: translateX(-10px);
+    }
+    .project-list-wrap .swiper-button-next{
+        transform: translateX(10px);
     }
     li .project-thums .page{
         padding-top: 28vh;
@@ -263,15 +289,30 @@
         top: 56%;
         left: 83%;
         max-width: 9vw;
+        transform: translate(-20px, -16px);
     }
     .project-thums .responsive img.mobile{
         top: 58%;
         left: 62%;
         max-width: 6vw;
+        transform: translate(-12px, -13px);
     }
     ul li.clone-project .project-thums .responsive img{
         left: 50%;
         max-width: 26vw;
+    }
+    li.clone-project .link-btns a.link-btn {
+        padding: 10px 20px;
+    }
+    .project-list-wrap ul li p.project-info b{
+        font-size: 18px;
+    }
+    .project-list-wrap ul li p.project-info b::after{
+        font-size: 10px;
+        padding: 6px;
+    }
+    .project-list-wrap ul li p.project-info span{
+        font-size: 12px;
     }
 
 

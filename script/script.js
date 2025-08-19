@@ -395,7 +395,7 @@ skillGnb.addEventListener('click', function(){
 projectGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
         window.scrollTo({
-        top: 2562,
+        top: 2580,
         behavior: 'smooth'
         })
     }
