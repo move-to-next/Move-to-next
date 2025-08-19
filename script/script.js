@@ -114,7 +114,6 @@ function arrowChange(){
         gnb.classList.add('active');
         gnbBtn.classList.add('active');
         isArrowChanged = true;
-        console.log("함수 실행됨");
     }else{
         gnbIcons.forEach((icon, index) => {
             gnbIcons[index].setAttribute('height', '8');
@@ -125,7 +124,6 @@ function arrowChange(){
         gnb.classList.remove('active');
         gnbBtn.classList.remove('active');
         isArrowChanged = false;
-        console.log("함수 실행안됨");
     }
 }
 // 반응형 GNB메뉴 클릭시 화살표아이콘 변경 함수 작용.
@@ -134,7 +132,7 @@ gnbBtn.addEventListener('click', arrowChange);
 // 브라우저 스크롤 다운 시 헤더 색상변경, TOP BUTTON 노출.
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
-    // console.log(pageTop);
+    console.log(pageTop);
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(pageTop >= 800){
@@ -144,7 +142,7 @@ window.addEventListener('scroll', function(){
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', '#333');
             })
-            if(tabletMedia.matches){
+            if(tabletMedia.matches || mobileMedia.matches){
                 gnb.style.backgroundColor = '#cccccc';
             }
             else{
@@ -159,7 +157,7 @@ window.addEventListener('scroll', function(){
             gnbLines.forEach((line, index) => {
                 gnbLines[index].setAttribute('stroke', 'white');
             })
-            if(tabletMedia.matches){
+            if(tabletMedia.matches || mobileMedia.matches){
                 gnb.style.backgroundColor = '#333333';
             }
             else{
@@ -192,7 +190,6 @@ topBtn.addEventListener('click', function(){
 
 // 마우스 스크롤 시 각 섹션 별로 카운트 적용 후 부드럽게 넘어가는 로직.
 window.addEventListener('wheel', function(event){
-    console.log('wheel 이벤트 발생, deltaY:', event.deltaY);
     let rects = document.querySelectorAll("svg rect");
     // 스크롤할때마다 카운트 1씩 증감함.
     if(event.deltaY > 0){
@@ -202,7 +199,6 @@ window.addEventListener('wheel', function(event){
     }
     // 반응형 기기에 따른 스크롤링 범위 설정
     if(mobileMedia.matches){
-        console.log("mobileMedia");
         if(screenCount == 0){
             window.scrollTo({
                 top: 0,
@@ -282,7 +278,6 @@ window.addEventListener('wheel', function(event){
         }
     }
     else if(desttopMedia.matches){
-        console.log("desttopMedia");
         if(screenCount == 0){
             window.scrollTo({
                 top: 0,
@@ -354,7 +349,7 @@ let contactGnb = document.querySelector('nav.gnb ul li.contact');
 aboutGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
         window.scrollTo({
-        top: 844,
+        top: 824,
         behavior: 'smooth'
         })
     }
@@ -377,7 +372,7 @@ aboutGnb.addEventListener('click', function(){
 skillGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
         window.scrollTo({
-        top: 1820,
+        top: 1700,
         behavior: 'smooth'
         })
     }
@@ -400,7 +395,7 @@ skillGnb.addEventListener('click', function(){
 projectGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
         window.scrollTo({
-        top: 2760,
+        top: 2562,
         behavior: 'smooth'
         })
     }
@@ -423,7 +418,7 @@ projectGnb.addEventListener('click', function(){
 designGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
         window.scrollTo({
-        top: 3700,
+        top: 3442,
         behavior: 'smooth'
         })
     }
@@ -446,7 +441,7 @@ designGnb.addEventListener('click', function(){
 contactGnb.addEventListener('click', function(){
     if(mobileMedia.matches){
         window.scrollTo({
-        top: 4700,
+        top: 4315,
         behavior: 'smooth'
         })
     }

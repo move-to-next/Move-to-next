@@ -22,7 +22,7 @@
         padding: 20px 10%;
     }
     header .header-inner h1.logo{
-        width: 10vw;
+        width: 15vw;
     }
     header .header-inner nav.gnb{
         position: fixed;
@@ -57,6 +57,8 @@
     }
     .gnb-responsive button svg{
         transition: 0.4s;
+        width: 70%;
+        height: 70%;
     }
     .gnb-responsive button.active{
         transform: translateY(-10px);
@@ -64,6 +66,9 @@
     header .header-inner nav.gnb ul{
         flex-direction: column;
         align-items: flex-start;
+    }
+    .header-inner nav.gnb ul li span {
+        font-size: 14px;
     }
     header .header-inner .gnb-bg{
         display: block;
@@ -90,27 +95,28 @@
 
     /* ### FIRST WRAP ### */
     .main-container .first-wrap .intro-title{
-        width: 45%;
+        width: 60%;
     }
     .first-wrap .intro-title .title-top{
-        gap: 20px;
+        gap: 10px;
     }
     .intro-title .title-top .title-arrow::before{
-        height: 2px;
+        height: 1px;
     }
     .intro-title .title-bottom .sub-text{
-        margin-top: 8px;
+        margin: 0;
     }
     .intro-title .title-top .title-arrow img {
-        width: 28px;
+        width: 14px;
+        transform: translateY(-1px);
     }
-    .title-bottom .sub-text .text{
-        font-size: 14px;
+    .intro-title .title-bottom .sub-text .text{
+        font-size: 8px;
     }
     .title-bottom .sub-text .cursor{
-        font-size: 14px;
-        line-height: 18px;
-        transform: translateX(-10px);
+        font-size: 8px;
+        line-height: 25px;
+        transform: translateX(-5px);
     }
     .first-wrap .bg-wrapper{
         height: 110vh;
@@ -136,7 +142,7 @@
         opacity: 0;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
         color: #fff;
         transition: 1s;
         transition-delay: 1s;
@@ -145,24 +151,47 @@
         font-family: 'Paperlogy';
         display: flex;
         flex-direction: column;
-        gap: 4px;
-        font-size: 16px;
+        gap: 0;
+        font-size: 14px;
         word-break: keep-all;
     }
     .profile-container .profile.overview .responsive-info p{
-        font-size: 12px;
+        font-size: 8px;
         word-break: keep-all;
     }
     .profile-container .profile.introduce .top-info{
         display: none;
     }
-    .menu-inner .profile-container .profile.introduce{
-        flex: 1;
-    }
     .profile.introduce .bottom-info .info{
         min-width: 30vw;
         transition: 1s;
         transition-delay: 1s;
+        margin-bottom: 5vh;
+    }
+    .profile.introduce .bottom-info .info h4{
+        font-size: 14px;
+    }
+    .profile.introduce .bottom-info .info ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .profile.introduce .bottom-info .info ul li{
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .profile.introduce .bottom-info .info ul li em{
+        margin: 0;
+        font-size: 8px;
+        line-height: 12px;
+    }
+    .profile.introduce .bottom-info .info:last-child{
+        margin: 0;
+    }
+    .menu-inner .profile-container .profile.introduce{
+        flex: 2;
     }
 
 
@@ -303,7 +332,7 @@
     .sixth-wrap .menu.contact .menu-inner .contact-title{
         top: 0;
         width: 100%;
-        height: 20%;
+        height: 16%;
     }
     .menu.contact .menu-inner .contact-box ul.contact-wrap {
         gap: 3vh;
@@ -313,13 +342,24 @@
         padding: 0;
         border: none;
     }
+    .contact-box ul li.contact-list p.title{
+        font-size: 28px;
+    }
     .contact-box ul li.contact-list p.title::after{
         display: none;
+    }
+
+    /* ### FOOTER ### */
+    footer .footer-inner{
+        padding: 20px 0;
+    }
+    .footer-inner address.copyright{
+        font-size: 12px;
     }
 }
 @media(min-width: 349px) and (max-width: 460px){
     .intro-title .title-top span{
-        font-size: 34px;
+        font-size: 24px;
     }
     .intro-title .title-bottom .main-title span{
         font-size: 30px;
@@ -330,13 +370,13 @@
     .contact-title h2{
         font-size: 42px;
     }
-    .contact-title span.title-text{
-        font-size: 18px;
+    .menu-inner .contact-title span.title-text{
+        font-size: 15px;
     }
-    .contact-title span.sub-text{
-        font-size: 14px;
+    .menu-inner .contact-title span.sub-text{
+        font-size: 12px;
     }
-    li.contact-list span.text{
+    ul.contact-wrap li.contact-list span.text{
         font-size: 20px;
     }
 }
