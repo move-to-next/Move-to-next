@@ -1,7 +1,7 @@
 // SCREEN RESPONSIVE
 let mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
 let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
-let desttopMedia = window.matchMedia("screen and (max-width: 2450px)");
+let desttopMedia = window.matchMedia("screen and (max-width: 1920px)");
 
 let screenCount = 0;
 
@@ -285,32 +285,32 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 930,
+                top: 1045,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 1880,
+                top: 2125,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 2800,
+                top: 3165,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 3800,
+                top: 4285,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 4700,
+                top: 5335,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 4852,
+                top: 5471,
                 behavior: 'smooth'
             })
         }
@@ -361,7 +361,7 @@ aboutGnb.addEventListener('click', function(){
     }
     else{
         window.scrollTo({
-        top: 926,
+        top: 1045,
         behavior: 'smooth'
         })
     }
@@ -384,7 +384,7 @@ skillGnb.addEventListener('click', function(){
     }
     else{
         window.scrollTo({
-        top: 1880,
+        top: 2125,
         behavior: 'smooth'
     })
     }
@@ -407,7 +407,7 @@ projectGnb.addEventListener('click', function(){
     }
     else{
         window.scrollTo({
-        top: 2880,
+        top: 3165,
         behavior: 'smooth'
     })
     }
@@ -430,7 +430,7 @@ designGnb.addEventListener('click', function(){
     }
     else{
         window.scrollTo({
-        top: 3800,
+        top: 4285,
         behavior: 'smooth'
     })
     }
@@ -453,7 +453,7 @@ contactGnb.addEventListener('click', function(){
     }
     else{
         window.scrollTo({
-        top: 4830,
+        top: 5335,
         behavior: 'smooth'
     })
     }
