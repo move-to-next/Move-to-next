@@ -570,10 +570,12 @@ let slideObserver = new IntersectionObserver((slide) => {
             element.target.style.transform = 'translateX(-100%)';
         }
     })
-},{
-    threshold: 0.1,
-    rootMargin: '50px 0px 50px 0px'
 });
+// ,{
+//     threshold: 0.1,
+//     rootMargin: '50px 0px 50px 0px'
+// }
+
 // fadeObserver - 노출이 감지되면 점점 선명해짐.
 let fadeObserver = new IntersectionObserver((fade) => {
     fade.forEach((element)=>{
