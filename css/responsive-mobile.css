@@ -390,13 +390,6 @@
         display: none;
     }
 
-    /* ### FOOTER ### */
-    footer .footer-inner{
-        padding: 20px 0;
-    }
-    .footer-inner address.copyright{
-        font-size: 12px;
-    }
 }
 @media(min-width: 349px) and (max-width: 460px){
     .intro-title .title-top span{
@@ -421,7 +414,20 @@
         font-size: 12px;
     }
     ul.contact-wrap li.contact-list span.text{
-        font-size: 20px;
+        font-size: 18px;
+    }
+    /* ### SECOND WRAP ### */
+    .profile-container .profile.overview .responsive-info h3{
+        font-family: 'Paperlogy';
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        font-size: 12px;
+        word-break: keep-all;
+    }
+    .profile-container .profile.overview .responsive-info p{
+        font-size: 7px;
+        word-break: keep-all;
     }
     /* ### THIRD WRAP ### */
     .main-container .third-wrap .menu.skill .skill-card-container{
@@ -463,9 +469,20 @@
     .link-btns a.link-btn span{
         font-size: 12px;
     }
+    .project-list-wrap ul li p.project-info span{
+        font-size: 10px;
+        word-break: keep-all;
+    }
     /* ### FIVETH WRAP ### */
     .fifth-wrap .menu.design .menu-inner .design-box{
         height: 75%;
+    }
+    /* ### FOOTER ### */
+    body footer .footer-inner{
+        padding: 18px 0;
+    }
+    footer .footer-inner address.copyright{
+        font-size: 12px;
     }
 }
 @media(min-width: 461px) and (max-width: 767px){

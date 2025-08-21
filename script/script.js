@@ -187,17 +187,15 @@ window.addEventListener('scroll', function(){
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(smallMobileMedia.matches){
-            if(pageTop >= 740){
+            if(pageTop >= 700){
                 isPageTopTrue(menu, topBtn);
-                console.log("함수실행성공")
             }
             else{
                 isPageTopFalse(menu, topBtn);
-                console.log("실패")
             }
         }
         else if(mobileMedia.matches){
-            if(pageTop >= 780){
+            if(pageTop >= 750){
                 isPageTopTrue(menu, topBtn);
             }
             else{
@@ -274,27 +272,27 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 750,
+                top: 705,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 1540,
+                top: 1460,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 2320,
+                top: 2190,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 3090,
+                top: 2930,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 3880,
+                top: 3690,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
@@ -398,7 +396,7 @@ let contactGnb = document.querySelector('nav.gnb ul li.contact');
 aboutGnb.addEventListener('click', function(){
     if(smallMobileMedia.matches){
         window.scrollTo({
-        top: 750,
+        top: 705,
         behavior: 'smooth'
         })
     }
@@ -427,7 +425,7 @@ aboutGnb.addEventListener('click', function(){
 skillGnb.addEventListener('click', function(){
     if(smallMobileMedia.matches){
         window.scrollTo({
-        top: 1540,
+        top: 1460,
         behavior: 'smooth'
         })
     }
@@ -456,7 +454,7 @@ skillGnb.addEventListener('click', function(){
 projectGnb.addEventListener('click', function(){
     if(smallMobileMedia.matches){
         window.scrollTo({
-        top: 2320,
+        top: 2190,
         behavior: 'smooth'
         })
     }
@@ -485,7 +483,7 @@ projectGnb.addEventListener('click', function(){
 designGnb.addEventListener('click', function(){
     if(smallMobileMedia.matches){
         window.scrollTo({
-        top: 3090,
+        top: 2930,
         behavior: 'smooth'
         })
     }
@@ -514,7 +512,7 @@ designGnb.addEventListener('click', function(){
 contactGnb.addEventListener('click', function(){
     if(smallMobileMedia.matches){
         window.scrollTo({
-        top: 3880,
+        top: 3690,
         behavior: 'smooth'
         })
     }
@@ -532,7 +530,7 @@ contactGnb.addEventListener('click', function(){
     }
     else{
         window.scrollTo({
-        top: 3965,
+        top: 3880,
         behavior: 'smooth'
     })
     }
