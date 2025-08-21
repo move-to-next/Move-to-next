@@ -1,5 +1,6 @@
 // SCREEN RESPONSIVE
-let mobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 767px)");
+let smallMobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 419px)");
+let mobileMedia = window.matchMedia("(min-width: 420px) and (max-width: 767px)");
 let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
 let desttopMedia = window.matchMedia("screen and (max-width: 1920px)");
 
@@ -40,7 +41,7 @@ function toggleCard(index){
 
 // 태블릿 또는 모바일 화면일떄 마우스오버대신 클릭,터치시 동작.
 cards.forEach((card, index)=>{
-    if(tabletMedia.matches || mobileMedia.matches){
+    if(tabletMedia.matches || mobileMedia.matches || smallMobileMedia.matches){
         card.addEventListener('click', () => toggleCard(index));
     }
     else{
@@ -129,44 +130,6 @@ function arrowChange(){
 // 반응형 GNB메뉴 클릭시 화살표아이콘 변경 함수 작용.
 gnbBtn.addEventListener('click', arrowChange);
 
-// 브라우저 스크롤 다운 시 헤더 색상변경, TOP BUTTON 노출.
-window.addEventListener('scroll', function(){
-    let pageTop = document.documentElement.scrollTop;
-    console.log(pageTop);
-    let topBtn = document.querySelector('.top-btn');
-    gnbMenus.forEach(menu => {
-        if(pageTop >= 800){
-            header.style.backgroundColor = '#ffffff';
-            menu.style.color = '#000';
-            topBtn.style.transform = 'translate(-40%, -40%)';
-            gnbLines.forEach((line, index) => {
-                gnbLines[index].setAttribute('stroke', '#333');
-            })
-            if(tabletMedia.matches || mobileMedia.matches){
-                gnb.style.backgroundColor = '#cccccc';
-            }
-            else{
-                gnb.style.backgroundColor = 'transparent';
-            }
-        }
-        else{
-            gnb.style.backgroundColor = 'transparent';
-            header.style.backgroundColor = 'transparent';
-            menu.style.color = '#fff';
-            topBtn.style.transform = 'translate(100%, -40%)';
-            gnbLines.forEach((line, index) => {
-                gnbLines[index].setAttribute('stroke', 'white');
-            })
-            if(tabletMedia.matches || mobileMedia.matches){
-                gnb.style.backgroundColor = '#333333';
-            }
-            else{
-                gnb.style.backgroundColor = 'transparent';
-            }
-        }
-    })
-})
-
 
 // 4.5초(4500밀리초)후 처음 인트로 애니메이션 요소 DISPLAY NONE(가리기)
 let openBg = document.querySelector('.opening-container');
@@ -185,6 +148,73 @@ topBtn.addEventListener('click', function(){
     screenCount = 0;
     isArrowChanged = true;
     arrowChange();
+})
+
+
+// 브라우저 스크롤 다운 시 헤더 색상변경, TOP BUTTON 노출.
+function isPageTopTrue(menu, topBtn){
+    header.style.backgroundColor = '#ffffff';
+    menu.style.color = '#000';
+    topBtn.style.transform = 'translate(-40%, -40%)';
+    gnbLines.forEach((line, index) => {
+        gnbLines[index].setAttribute('stroke', '#333');
+    })
+    if(tabletMedia.matches || mobileMedia.matches || smallMobileMedia.matches){
+        gnb.style.backgroundColor = '#cccccc';
+    }
+    else{
+        gnb.style.backgroundColor = 'transparent';
+    }
+}
+function isPageTopFalse(menu, topBtn){
+    gnb.style.backgroundColor = 'transparent';
+    header.style.backgroundColor = 'transparent';
+    menu.style.color = '#fff';
+    topBtn.style.transform = 'translate(100%, -40%)';
+    gnbLines.forEach((line, index) => {
+        gnbLines[index].setAttribute('stroke', 'white');
+    })
+    if(tabletMedia.matches || mobileMedia.matches || smallMobileMedia.matches){
+        gnb.style.backgroundColor = '#333333';
+    }
+    else{
+        gnb.style.backgroundColor = 'transparent';
+    }
+}
+window.addEventListener('scroll', function(){
+    let pageTop = document.documentElement.scrollTop;
+    console.log(pageTop);
+    let topBtn = document.querySelector('.top-btn');
+    gnbMenus.forEach(menu => {
+        if(smallMobileMedia.matches){
+            if(pageTop >= 740){
+                isPageTopTrue(menu, topBtn);
+                console.log("함수실행성공")
+            }
+            else{
+                isPageTopFalse(menu, topBtn);
+                console.log("실패")
+            }
+        }
+        else if(mobileMedia.matches){
+            if(pageTop >= 780){
+                isPageTopTrue(menu, topBtn);
+            }
+            else{
+                isPageTopFalse(menu, topBtn);
+            }
+        }
+        else{
+            if(pageTop >= 800){
+                isPageTopTrue(menu, topBtn);
+                console.log("함수실행성공")
+            }
+            else{
+                isPageTopFalse(menu, topBtn);
+                console.log("실패")
+            }
+        }
+    })
 })
 
 
@@ -232,6 +262,44 @@ window.addEventListener('wheel', function(event){
         }else if(screenCount == 6){
             window.scrollTo({
                 top: 4852,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else if(smallMobileMedia.matches){
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 750,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 1540,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 2320,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 3090,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 3880,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 3965,
                 behavior: 'smooth'
             })
         }
@@ -321,25 +389,6 @@ window.addEventListener('wheel', function(event){
 })
 
 
-// 디자인 섹션의 배너 소개 박스 클릭 시 이벤트 배너가 팝업 창으로 노출. (+ 닫기 버튼 클릭시 닫힘.)
-let bannerBg = document.querySelector('.banner-wrap');
-let designCards = document.querySelectorAll('.design-list .design-card');
-let banners = document.querySelectorAll('.banner-wrap .banner');
-let closeBtns = document.querySelectorAll('.banner .close-btn');
-designCards.forEach((card, index) => {
-    card.addEventListener('click', function(){
-        banners[index].classList.add('active');
-        bannerBg.classList.add('active');
-    })
-})
-closeBtns.forEach((btn, index) => {
-    btn.addEventListener('click', function(){
-        banners[index].classList.remove('active');
-        bannerBg.classList.remove('active');
-    })
-})
-
-
 // GNB의 메뉴 클릭 시 각 섹션으로 섹션 스크롤링 되며 이동.
 let aboutGnb = document.querySelector('nav.gnb ul li.about');
 let skillGnb = document.querySelector('nav.gnb ul li.skill');
@@ -347,7 +396,13 @@ let projectGnb = document.querySelector('nav.gnb ul li.project');
 let designGnb = document.querySelector('nav.gnb ul li.design');
 let contactGnb = document.querySelector('nav.gnb ul li.contact');
 aboutGnb.addEventListener('click', function(){
-    if(mobileMedia.matches){
+    if(smallMobileMedia.matches){
+        window.scrollTo({
+        top: 750,
+        behavior: 'smooth'
+        })
+    }
+    else if(mobileMedia.matches){
         window.scrollTo({
         top: 824,
         behavior: 'smooth'
@@ -370,7 +425,13 @@ aboutGnb.addEventListener('click', function(){
     arrowChange();
 })
 skillGnb.addEventListener('click', function(){
-    if(mobileMedia.matches){
+    if(smallMobileMedia.matches){
+        window.scrollTo({
+        top: 1540,
+        behavior: 'smooth'
+        })
+    }
+    else if(mobileMedia.matches){
         window.scrollTo({
         top: 1700,
         behavior: 'smooth'
@@ -393,7 +454,13 @@ skillGnb.addEventListener('click', function(){
     arrowChange();
 })
 projectGnb.addEventListener('click', function(){
-    if(mobileMedia.matches){
+    if(smallMobileMedia.matches){
+        window.scrollTo({
+        top: 2320,
+        behavior: 'smooth'
+        })
+    }
+    else if(mobileMedia.matches){
         window.scrollTo({
         top: 2580,
         behavior: 'smooth'
@@ -416,7 +483,13 @@ projectGnb.addEventListener('click', function(){
     arrowChange();
 })
 designGnb.addEventListener('click', function(){
-    if(mobileMedia.matches){
+    if(smallMobileMedia.matches){
+        window.scrollTo({
+        top: 3090,
+        behavior: 'smooth'
+        })
+    }
+    else if(mobileMedia.matches){
         window.scrollTo({
         top: 3442,
         behavior: 'smooth'
@@ -439,7 +512,13 @@ designGnb.addEventListener('click', function(){
     arrowChange();
 })
 contactGnb.addEventListener('click', function(){
-    if(mobileMedia.matches){
+    if(smallMobileMedia.matches){
+        window.scrollTo({
+        top: 3880,
+        behavior: 'smooth'
+        })
+    }
+    else if(mobileMedia.matches){
         window.scrollTo({
         top: 4315,
         behavior: 'smooth'
@@ -453,13 +532,32 @@ contactGnb.addEventListener('click', function(){
     }
     else{
         window.scrollTo({
-        top: 5335,
+        top: 3965,
         behavior: 'smooth'
     })
     }
     screenCount = 5;
     isArrowChanged = true;
     arrowChange();
+})
+
+
+// 디자인 섹션의 배너 소개 박스 클릭 시 이벤트 배너가 팝업 창으로 노출. (+ 닫기 버튼 클릭시 닫힘.)
+let bannerBg = document.querySelector('.banner-wrap');
+let designCards = document.querySelectorAll('.design-list .design-card');
+let banners = document.querySelectorAll('.banner-wrap .banner');
+let closeBtns = document.querySelectorAll('.banner .close-btn');
+designCards.forEach((card, index) => {
+    card.addEventListener('click', function(){
+        banners[index].classList.add('active');
+        bannerBg.classList.add('active');
+    })
+})
+closeBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function(){
+        banners[index].classList.remove('active');
+        bannerBg.classList.remove('active');
+    })
 })
 
 

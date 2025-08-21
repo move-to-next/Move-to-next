@@ -110,9 +110,6 @@
         width: 14px;
         transform: translateY(-1px);
     }
-    .intro-title .title-bottom .sub-text .text{
-        font-size: 8px;
-    }
     .title-bottom .sub-text .cursor{
         font-size: 8px;
         line-height: 25px;
@@ -120,6 +117,9 @@
     }
     .first-wrap .bg-wrapper{
         height: 110vh;
+    }
+    .first-wrap .scroll img{
+        width: 6vw;
     }
 
 
@@ -263,7 +263,7 @@
         height: 75%;
     }
     .menu.project .menu-inner .project-list .project-list-wrap{
-        height: 100%;
+        height: 90%;
     }
     .project-list-wrap ul li .project-thums{
         height: 30vh;
@@ -403,13 +403,16 @@
         font-size: 24px;
     }
     .intro-title .title-bottom .main-title span{
-        font-size: 30px;
+        font-size: 26px;
     }
     .title-bottom .sub-text .text{
         font-size: 11px;
     }
     .contact-title h2{
         font-size: 42px;
+    }
+    .intro-title .title-bottom .sub-text .text{
+        font-size: 7px;
     }
     .menu-inner .contact-title span.title-text{
         font-size: 15px;
@@ -420,27 +423,60 @@
     ul.contact-wrap li.contact-list span.text{
         font-size: 20px;
     }
-}
-@media(min-width: 841px) and (max-width: 920px){
-    .intro-title .title-top span{
-        font-size: 36px;
+    /* ### THIRD WRAP ### */
+    .main-container .third-wrap .menu.skill .skill-card-container{
+        height: 53%;
     }
-    .intro-title .title-bottom .main-title span{
-        font-size: 44px;
+    .skill-card-container [class*="-wrap"] .card{
+        transform: translateY(98%);
     }
-    .title-bottom .sub-text .text{
+    .skill-card-container [class*="-wrap"] .info{
+        transform: translateY(-110%);
+    }
+    .skill-card-container [class*="-wrap"] .card.active{
+        transform: translateY(98%);
+    }
+    .skill-card-container [class*="-wrap"] .info.active{
+        transform: translateY(-110%);
+    }
+    .skill-card-container [class*="-wrap"] .info .overview .title{
+        font-size: 9px;
+    }
+    .skill-card-container [class*="-wrap"] .info .overview .text{
+        font-size: 9px;
+    }
+    /* ### FOURTH WRAP ### */
+    .project-list-wrap ul li .project-thums{
+        height: 25vh;
+    }
+    li .project-thums .page{
+        width: 45%;
+        padding-top: 20vh;
+    }
+    li .project-thums .page{
+        width: 55%;
+        height: 100%;
+    }
+    .link-btns a.link-btn{
+        padding: 8px 25px;
+    }
+    .link-btns a.link-btn span{
         font-size: 12px;
     }
-    li.contact-list span.text{
-        font-size: 34px;
+    /* ### FIVETH WRAP ### */
+    .fifth-wrap .menu.design .menu-inner .design-box{
+        height: 75%;
     }
 }
-@media(min-width: 921px) and (max-width: 767px){
+@media(min-width: 461px) and (max-width: 767px){
     .intro-title .title-top span{
         font-size: 38px;
     }
     .intro-title .title-bottom .main-title span{
         font-size: 48px;
+    }
+    .intro-title .title-bottom .sub-text .text{
+        font-size: 8px;
     }
     .title-bottom .sub-text .text{
         font-size: 13px;
