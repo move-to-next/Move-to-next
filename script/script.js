@@ -571,11 +571,11 @@ let slideObserver = new IntersectionObserver((slide) => {
         }
     })
 },{
-    threshold: 0.1
+    rootMargin: '50px 0px 50px 0px'
 });
 // ,{
-//     threshold: 0.1,
-//     rootMargin: '50px 0px 50px 0px'
+//     threshold: 0.1, // 10%만 보여도 감지됨. 0 = 기본값
+//     rootMargin: '50px 0px 50px 0px' // 위,아래 나타나기 50px전부터 감지
 // }
 
 // fadeObserver - 노출이 감지되면 점점 선명해짐.
