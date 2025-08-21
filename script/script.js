@@ -570,6 +570,8 @@ let slideObserver = new IntersectionObserver((slide) => {
             element.target.style.transform = 'translateX(-100%)';
         }
     })
+},{
+    threshold: 0.1
 });
 // ,{
 //     threshold: 0.1,
