@@ -565,15 +565,17 @@ let slideObserver = new IntersectionObserver((slide) => {
     slide.forEach((element)=>{
         if(element.isIntersecting){
             element.target.style.transform = 'translateX(0%)';
+            console.log("감지됨");
         }
         else{
             element.target.style.transform = 'translateX(-100%)';
+            console.log("감지안됨")
         }
     })
 });
 // ,{
 //     threshold: 0.1, // 10%만 보여도 감지됨. 0 = 기본값
-//     rootMargin: '50px 0px 50px 0px' // 위,아래 나타나기 50px전부터 감지
+//     rootMargin: '50px 0px 50px 0px' // 위,아래 나타나기 50px전부터 감지 // 0px = 기본값
 // }
 
 // fadeObserver - 노출이 감지되면 점점 선명해짐.
