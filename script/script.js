@@ -570,8 +570,6 @@ let slideObserver = new IntersectionObserver((slide) => {
             element.target.style.transform = 'translateX(-100%)';
         }
     })
-},{
-    rootMargin: '50px 0px 50px 0px'
 });
 // ,{
 //     threshold: 0.1, // 10%만 보여도 감지됨. 0 = 기본값
