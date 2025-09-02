@@ -2,7 +2,11 @@
 let smallMobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 419px)");
 let mobileMedia = window.matchMedia("(min-width: 420px) and (max-width: 767px)");
 let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
-let desttopMedia = window.matchMedia("screen and (max-width: 1920px)");
+let desttopMedia_LAPTOP = window.matchMedia("screen and (max-width: 1840px)");
+let desttopMedia_HD = window.matchMedia("screen and (max-width: 1366px)");
+let desttopMedia_FHD = window.matchMedia("screen and (max-width: 1920px)");
+let desttopMedia_QHD = window.matchMedia("screen and (max-width: 2560px)");
+let desttopMedia_4K = window.matchMedia("screen and (max-width: 3840px)");
 
 let screenCount = 0;
 
@@ -205,11 +209,9 @@ window.addEventListener('scroll', function(){
         else{
             if(pageTop >= 800){
                 isPageTopTrue(menu, topBtn);
-                console.log("함수실행성공")
             }
             else{
                 isPageTopFalse(menu, topBtn);
-                console.log("실패")
             }
         }
     })
@@ -343,7 +345,159 @@ window.addEventListener('wheel', function(event){
             })
         }
     }
-    else if(desttopMedia.matches){
+    else if(desttopMedia_HD.matches){
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 820,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 1715,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 2550,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 3460,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 4283,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 5471,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else if(desttopMedia_LAPTOP.matches){
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 870,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 1800,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 2685,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 3645,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 4520,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 4654,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else if(desttopMedia_FHD.matches){
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 1045,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 2125,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 3165,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 4285,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 5335,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 5471,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else if(desttopMedia_QHD.matches){
+        if(screenCount == 0){
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 1){
+            window.scrollTo({
+                top: 1045,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 2){
+            window.scrollTo({
+                top: 2125,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 3){
+            window.scrollTo({
+                top: 3165,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 4){
+            window.scrollTo({
+                top: 4285,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 5){
+            window.scrollTo({
+                top: 5335,
+                behavior: 'smooth'
+            })
+        }else if(screenCount == 6){
+            window.scrollTo({
+                top: 5471,
+                behavior: 'smooth'
+            })
+        }
+    }
+    else if(desttopMedia_4K.matches){
         if(screenCount == 0){
             window.scrollTo({
                 top: 0,
@@ -565,11 +719,9 @@ let slideObserver = new IntersectionObserver((slide) => {
     slide.forEach((element)=>{
         if(element.isIntersecting){
             element.target.style.transform = 'translateX(0%)';
-            console.log("감지됨");
         }
         else{
             element.target.style.transform = 'translateX(-100%)';
-            console.log("감지안됨")
         }
     })
 });
@@ -617,6 +769,7 @@ fadeObserver.observe(contactTitle[1]);
 fadeObserver.observe(contactTitle[2]);
 fadeObserver.observe(aboutObject[0]);
 fadeObserver.observe(aboutObject[1]);
+fadeObserver.observe(aboutObject[2]);
 fadeObserver.observe(aboutObject[3]);
 fadeObserver.observe(skillObject[0]);
 fadeObserver.observe(skillObject[1]);
