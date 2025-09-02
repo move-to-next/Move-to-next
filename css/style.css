@@ -1538,30 +1538,106 @@ footer .footer-inner{
     /* FOURTH-WRAP */
     .project-title .title-text{
     font-size: 13px;
-}
+    }
     /* FIFTH-WRAP */
     .contact-title span.title-text{
         font-size: 20px;
     }
-.contact-title span.sub-text{
+    .contact-title span.sub-text{
         font-size: 14px;
     }
-li.contact-list p.title{
+    li.contact-list p.title{
         font-size: 24px;
     }
-li.contact-list span.text{
+    li.contact-list span.text{
         font-size: 30px;
     }
 }
 /* desttopMedia_FHD */
 @media screen and (max-width: 1920px) {
-
+    .menu-inner h2{}
+    /* FIRST-WRAP */
+    .title-top span{}
+    .title-bottom .sub-text{}
+    .sub-text .cursor{}
+    .title-bottom .main-title span{}
+    .title-bottom .sub-text span.text{}
+    /* SECOND-WRAP */
+    .second-wrap .about .profile-container {}
+    .top-info h3{}
+    .top-info p{}
+    .bottom-info .info h4{}
+    .bottom-info .info ul li{}
+    .bottom-info .info ul li em{}
+    /* THIRD-WRAP */
+    .skill-card-container .info-wrap{}
+    .info .overview{}
+    .info .overview .title{}
+    .info .overview .text{}
+    /* FOURTH-WRAP */
+    .project-title .title-text{}
+    /* FIFTH-WRAP */
+    .contact-title span.title-text{}
+    .contact-title span.sub-text{}
+    li.contact-list p.title{}
+    li.contact-list span.text{}
 }
 /* desttopMedia_QHD */
 @media screen and (max-width: 2560px) {
-
+    .menu-inner h2{}
+    /* FIRST-WRAP */
+    .title-top span{}
+    .title-bottom .sub-text{}
+    .sub-text .cursor{}
+    .title-bottom .main-title span{}
+    .title-bottom .sub-text span.text{}
+    /* SECOND-WRAP */
+    .second-wrap .about .profile-container {}
+    .top-info h3{}
+    .top-info p{}
+    .bottom-info .info h4{}
+    .bottom-info .info ul li{}
+    .bottom-info .info ul li em{}
+    /* THIRD-WRAP */
+    .skill-card-container .info-wrap{}
+    .info .overview{}
+    .info .overview .title{}
+    .info .overview .text{}
+    /* FOURTH-WRAP */
+    .project-title .title-text{}
+    /* FIFTH-WRAP */
+    .contact-title span.title-text{}
+    .contact-title span.sub-text{}
+    li.contact-list p.title{}
+    li.contact-list span.text{}
 }
 /* desttopMedia_4K */
 @media screen and (max-width: 3840px) {
-
+    .menu-inner h2{}
+    /* FIRST-WRAP */
+    .title-top span{}
+    .title-bottom .sub-text{}
+    .sub-text .cursor{}
+    .title-bottom .main-title span{}
+    .title-bottom .sub-text span.text{}
+    /* SECOND-WRAP */
+    .second-wrap .about .profile-container {}
+    .top-info h3{}
+    .top-info p{}
+    .bottom-info .info h4{}
+    .bottom-info .info ul li{}
+    .bottom-info .info ul li em{}
+    /* THIRD-WRAP */
+    .skill-card-container .info-wrap{}
+    .info .overview{}
+    .info .overview .title{}
+    .info .overview .text{}
+    /* FOURTH-WRAP */
+    .project-title .title-text{}
+    /* FIFTH-WRAP */
+    .contact-title span.title-text{}
+    .contact-title span.sub-text{}
+    li.contact-list p.title{}
+    li.contact-list span.text{}
 }
+/* 집가서 모니터 사이즈별 폰트크기랑 드래그범위 다 수정해야지~ */
