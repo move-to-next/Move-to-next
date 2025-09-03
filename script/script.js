@@ -2,7 +2,7 @@
 let smallMobileMedia = window.matchMedia("(min-width: 350px) and (max-width: 419px)");
 let mobileMedia = window.matchMedia("(min-width: 420px) and (max-width: 767px)");
 let tabletMedia = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
-let desttopMedia_LAPTOP = window.matchMedia("screen and (max-width: 1840px)");
+let desttopMedia_LAPTOP = window.matchMedia("screen and (max-width: 1860px)");
 let desttopMedia_HD = window.matchMedia("screen and (max-width: 1366px)");
 let desttopMedia_FHD = window.matchMedia("screen and (max-width: 1920px)");
 let desttopMedia_QHD = window.matchMedia("screen and (max-width: 2560px)");
@@ -391,32 +391,32 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 870,
+                top: 1020,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 1800,
+                top: 2060,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 2685,
+                top: 3070,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 3645,
+                top: 4155,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 4520,
+                top: 5150,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 4654,
+                top: 5471,
                 behavior: 'smooth'
             })
         }
@@ -429,32 +429,32 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 1045,
+                top: 1040,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 2125,
+                top: 2130,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 3165,
+                top: 3170,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 4285,
+                top: 4290,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 5335,
+                top: 5320,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 5471,
+                top: 5600,
                 behavior: 'smooth'
             })
         }
@@ -467,32 +467,32 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 1045,
+                top: 1370,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 2125,
+                top: 2840,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 3165,
+                top: 4240,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 4285,
+                top: 5710,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 5335,
+                top: 7100,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 5471,
+                top: 7400,
                 behavior: 'smooth'
             })
         }
@@ -505,32 +505,32 @@ window.addEventListener('wheel', function(event){
             })
         }else if(screenCount == 1){
             window.scrollTo({
-                top: 1045,
+                top: 2020,
                 behavior: 'smooth'
             })
         }else if(screenCount == 2){
             window.scrollTo({
-                top: 2125,
+                top: 4260,
                 behavior: 'smooth'
             })
         }else if(screenCount == 3){
             window.scrollTo({
-                top: 3165,
+                top: 6380,
                 behavior: 'smooth'
             })
         }else if(screenCount == 4){
             window.scrollTo({
-                top: 4285,
+                top: 8590,
                 behavior: 'smooth'
             })
         }else if(screenCount == 5){
             window.scrollTo({
-                top: 5335,
+                top: 10670,
                 behavior: 'smooth'
             })
         }else if(screenCount == 6){
             window.scrollTo({
-                top: 5471,
+                top: 12000,
                 behavior: 'smooth'
             })
         }
@@ -566,6 +566,36 @@ aboutGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(desttopMedia_HD.matches){
+        window.scrollTo({
+        top: 820,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_LAPTOP.matches){
+        window.scrollTo({
+        top: 1020,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_FHD.matches){
+        window.scrollTo({
+        top: 1040,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_QHD.matches){
+        window.scrollTo({
+        top: 1370,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_4K.matches){
+        window.scrollTo({
+        top: 2120,
+        behavior: 'smooth'
+        })
+    }
     else{
         window.scrollTo({
         top: 1045,
@@ -592,6 +622,36 @@ skillGnb.addEventListener('click', function(){
     else if(tabletMedia.matches){
         window.scrollTo({
         top: 1850,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_HD.matches){
+        window.scrollTo({
+        top: 1715,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_LAPTOP.matches){
+        window.scrollTo({
+        top: 2060,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_FHD.matches){
+        window.scrollTo({
+        top: 2130,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_QHD.matches){
+        window.scrollTo({
+        top: 2840,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_4K.matches){
+        window.scrollTo({
+        top: 4260,
         behavior: 'smooth'
         })
     }
@@ -624,6 +684,36 @@ projectGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(desttopMedia_HD.matches){
+        window.scrollTo({
+        top: 2550,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_LAPTOP.matches){
+        window.scrollTo({
+        top: 3070,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_FHD.matches){
+        window.scrollTo({
+        top: 3170,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_QHD.matches){
+        window.scrollTo({
+        top: 4240,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_4K.matches){
+        window.scrollTo({
+        top: 6380,
+        behavior: 'smooth'
+        })
+    }
     else{
         window.scrollTo({
         top: 3165,
@@ -653,6 +743,36 @@ designGnb.addEventListener('click', function(){
         behavior: 'smooth'
         })
     }
+    else if(desttopMedia_HD.matches){
+        window.scrollTo({
+        top: 3460,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_LAPTOP.matches){
+        window.scrollTo({
+        top: 4155,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_FHD.matches){
+        window.scrollTo({
+        top: 4290,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_QHD.matches){
+        window.scrollTo({
+        top: 5710,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_4K.matches){
+        window.scrollTo({
+        top: 8590,
+        behavior: 'smooth'
+        })
+    }
     else{
         window.scrollTo({
         top: 4285,
@@ -679,6 +799,36 @@ contactGnb.addEventListener('click', function(){
     else if(tabletMedia.matches){
         window.scrollTo({
         top: 4710,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_HD.matches){
+        window.scrollTo({
+        top: 4283,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_LAPTOP.matches){
+        window.scrollTo({
+        top: 5150,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_FHD.matches){
+        window.scrollTo({
+        top: 5320,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_QHD.matches){
+        window.scrollTo({
+        top: 7100,
+        behavior: 'smooth'
+        })
+    }
+    else if(desttopMedia_4K.matches){
+        window.scrollTo({
+        top: 10670,
         behavior: 'smooth'
         })
     }

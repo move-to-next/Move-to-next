@@ -843,7 +843,7 @@ nav.gnb ul li:hover span{
 }
 .project-list .project-list-wrap{
     width: 100%;
-    height: 80%;
+    height: 90%;
     border-radius: 10px;
 }
 .project-list-wrap ul{
@@ -1480,7 +1480,7 @@ footer .footer-inner{
 }
 
 /* desttopMedia_HD */
-@media screen and (max-width: 1366px) {
+@media (min-width: 1366px) and (max-width: 1540px) {
     .menu-inner h2{
         line-height: 56px;
     }
@@ -1553,91 +1553,393 @@ footer .footer-inner{
         font-size: 30px;
     }
 }
-/* desttopMedia_FHD */
-@media screen and (max-width: 1920px) {
-    .menu-inner h2{}
+/* desttopMedia_LAPTOP */
+@media (min-width: 1541px) and (max-width: 1860px) {
+    .menu-inner h2{
+        line-height: 56px;
+    }
     /* FIRST-WRAP */
-    .title-top span{}
-    .title-bottom .sub-text{}
-    .sub-text .cursor{}
-    .title-bottom .main-title span{}
-    .title-bottom .sub-text span.text{}
+    .first-wrap .intro-title{
+        width: 30.5%;
+    }
+    .title-top span{
+        font-size: 60px;
+    }
+    .title-bottom .main-title span{
+        font-size: 60px;
+    }
+    .title-bottom .sub-text span.text{
+        font-size: 17px;
+    }
     /* SECOND-WRAP */
-    .second-wrap .about .profile-container {}
-    .top-info h3{}
-    .top-info p{}
-    .bottom-info .info h4{}
-    .bottom-info .info ul li{}
-    .bottom-info .info ul li em{}
-    /* THIRD-WRAP */
-    .skill-card-container .info-wrap{}
-    .info .overview{}
-    .info .overview .title{}
-    .info .overview .text{}
+    .top-info h3{
+        font-size: 28px;
+        gap: 3px;
+    }
+    .top-info p{
+        font-size: 14px;
+    }
+    .bottom-info .info h4{
+        font-size: 18px;
+    }
+    .bottom-info .info ul li{
+        font-size: 14px;
+    }
+    .bottom-info .info ul li em{
+        font-size: 14px;
+    }
     /* FOURTH-WRAP */
-    .project-title .title-text{}
+    .project-title .title-text{
+        font-size: 16px;
+    }
+    .project-list-wrap ul li{
+        padding: 5%;
+    }
+    .project-thums .page{
+        padding-top: 40%;
+    }
+    .project-list .project-list-wrap{
+        height: 90%;
+    }
     /* FIFTH-WRAP */
-    .contact-title span.title-text{}
-    .contact-title span.sub-text{}
-    li.contact-list p.title{}
-    li.contact-list span.text{}
+    .design-info .logo.nepa{
+        max-width: 10vw;
+    }
+}
+/* desttopMedia_FHD */
+@media (min-width: 1861px) and (max-width: 1920px) {
+    /* ##### HEADER ##### */
+    nav.gnb ul li span{
+        font-size: 20px;
+    }
+    /* COMMON STYLE */
+    .menu-inner h2{
+        font-size: 54px;
+    }
+    /* FIRST-WRAP */
+    .first-wrap .intro-title{
+        width: 26.5%;
+    }
+    .title-bottom .main-title span{
+        font-size: 56px;
+    }
+    .title-bottom .sub-text span.text{
+        font-size: 16px;
+    }
+    .scroll span{
+        font-size: 20px;
+    }
+    /* SECOND-WRAP */
+    .second-wrap .about .profile-container {
+        height: 80%;
+    }
+    .top-info h3{
+        font-size: 28px;
+    }
+    .top-info p{
+        font-size: 16px;
+    }
+    .bottom-info .info h4{
+        font-size: 24px;
+    }
+    .bottom-info .info ul li{
+        font-size: 16px;
+    }
+    .bottom-info .info ul li em{
+        font-size: 16px;
+        margin-left: 6px;
+    }
+    /* THIRD-WRAP */
+    .skill-card-container .info-wrap{
+        gap: 1.5vw;
+    }
+    .card .overview span{
+        font-size: 28px;
+    }
+    .card-hover .hover-text{
+        font-size: 18px;
+    }
+    .info-wrap .info{
+        padding: 3.5vh 1.5%;
+        transform: translateY(-58%);
+    }
+    .info .overview .text{
+        font-size: 16px;
+    }
+    /* FOURTH-WRAP */
+    .project-list .project-list-wrap{
+        height: 85%;
+    }
+    .project-title .title-text{
+        font-size: 18px;
+    }
+    p.project-info b{
+        font-size: 32px;
+    }
+    p.project-info span{
+        font-size: 18px;
+    }
+    .project-list-wrap ul li .link-btns{
+        margin-top: 20px;
+    }
+    a.link-btn span{
+        font-size: 20px;
+        line-height: 20px;
+        vertical-align: middle;
+    }
+    /* FIFTH-WRAP */
+    .menu-inner .design-title span.title-text{
+        font-size: 18px;
+    }
+    /* FOOTER */
+    footer .footer-inner{
+        padding: 24px 0;
+    }
+    .footer-inner address.copyright{
+        font-size: 18px;
+    }
 }
 /* desttopMedia_QHD */
-@media screen and (max-width: 2560px) {
-    .menu-inner h2{}
+@media (min-width: 1921px) and (max-width: 2560px) {
+    /* ##### HEADER ##### */
+    .header-inner{
+        padding: 50px 10%;
+    }
+    .header-inner h1.logo{
+        width: 6vw;
+    }
+    nav.gnb ul li span{
+        font-size: 24px;
+    }
+    /* COMMON STYLE */
+    .menu-inner h2{
+        font-size: 54px;
+    }
     /* FIRST-WRAP */
-    .title-top span{}
-    .title-bottom .sub-text{}
-    .sub-text .cursor{}
-    .title-bottom .main-title span{}
-    .title-bottom .sub-text span.text{}
+    .first-wrap .intro-title{
+        width: 24%;
+    }
+    .title-bottom .main-title span{
+        font-size: 64px;
+    }
+    .title-bottom .sub-text span.text{
+        font-size: 19px;
+    }
+    .scroll span{
+        font-size: 20px;
+    }
     /* SECOND-WRAP */
-    .second-wrap .about .profile-container {}
-    .top-info h3{}
-    .top-info p{}
-    .bottom-info .info h4{}
-    .bottom-info .info ul li{}
-    .bottom-info .info ul li em{}
+    .second-wrap .about .profile-container {
+        height: 80%;
+    }
+    .top-info h3{
+        font-size: 36px;
+    }
+    .top-info p{
+        font-size: 20px;
+    }
+    .bottom-info .info h4{
+        font-size: 28px;
+    }
+    .bottom-info .info ul li{
+        font-size: 20px;
+    }
+    .bottom-info .info ul li em{
+        font-size: 20px;
+        margin-left: 10px;
+    }
     /* THIRD-WRAP */
-    .skill-card-container .info-wrap{}
-    .info .overview{}
-    .info .overview .title{}
-    .info .overview .text{}
+    .card .overview span{
+        font-size: 28px;
+    }
+    .card-hover .hover-text{
+        font-size: 18px;
+    }
+    .info .overview .text{
+        font-size: 20px;
+    }
     /* FOURTH-WRAP */
-    .project-title .title-text{}
+    .project-list .project-list-wrap{
+        height: 80%;
+    }
+    .project-title .title-text{
+        font-size: 24px;
+    }
+    p.project-info b{
+        font-size: 36px;
+    }
+    p.project-info span{
+        font-size: 24px;
+    }
+    .project-list-wrap ul li .link-btns{
+        margin-top: 20px;
+    }
+    a.link-btn span{
+        font-size: 20px;
+        line-height: 20px;
+        vertical-align: middle;
+    }
     /* FIFTH-WRAP */
-    .contact-title span.title-text{}
-    .contact-title span.sub-text{}
-    li.contact-list p.title{}
-    li.contact-list span.text{}
+    .menu-inner .design-title span.title-text{
+        font-size: 20px;
+    }
+    /* FOOTER */
+    footer .footer-inner{
+        padding: 30px 0;
+    }
+    .footer-inner address.copyright{
+        font-size: 24px;
+    }
 }
 /* desttopMedia_4K */
-@media screen and (max-width: 3840px) {
-    .menu-inner h2{}
+@media (min-width: 2561px) and (max-width: 3840px) {
+    /* ##### HEADER ##### */
+    .header-inner{
+        padding: 60px 10%;
+    }
+    .header-inner h1.logo{
+        width: 6vw;
+        padding-top: 60px;
+    }
+    nav.gnb ul li span{
+        font-size: 32px;
+    }
+    /* COMMON STYLE */
+    .menu-inner h2{
+        font-size: 72px;
+    }
     /* FIRST-WRAP */
-    .title-top span{}
-    .title-bottom .sub-text{}
-    .sub-text .cursor{}
-    .title-bottom .main-title span{}
-    .title-bottom .sub-text span.text{}
+    .first-wrap .intro-title{
+        width: 22%;
+    }
+    .title-top span{
+        font-size: 90px;
+    }
+    .title-bottom .main-title span{
+        font-size: 90px;
+    }
+    .title-bottom .sub-text span.text{
+        font-size: 26px;
+    }
+    .sub-text .cursor{
+        font-size: 28px;
+        line-height: 30px;
+        margin: 0;
+    }
+    .scroll img{
+        width: 1vw;
+        transform: translateY(15px);
+    }
+    .scroll span{
+        font-size: 28px;
+    }
     /* SECOND-WRAP */
-    .second-wrap .about .profile-container {}
-    .top-info h3{}
-    .top-info p{}
-    .bottom-info .info h4{}
-    .bottom-info .info ul li{}
-    .bottom-info .info ul li em{}
+    .second-wrap .about .profile-container {
+        height: 80%;
+    }
+    .top-info h3{
+        font-size: 46px;
+    }
+    .top-info p{
+        font-size: 28px;
+    }
+    .bottom-info .info h4{
+        font-size: 40px;
+    }
+    .bottom-info .info ul li{
+        font-size: 32px;
+    }
+    .bottom-info .info ul li em{
+        font-size: 28px;
+    }
     /* THIRD-WRAP */
-    .skill-card-container .info-wrap{}
-    .info .overview{}
-    .info .overview .title{}
-    .info .overview .text{}
+    .card-wrap .card{
+        border-radius: 20px;
+    }
+    .card-wrap .card .card-hover{
+        transform: translateY(-150%);
+    }
+    .card-hover .hover-text{
+        font-size: 24px;
+    }
+    .card .overview span{
+        font-size: 36px;
+    }
+    .info-wrap .info{
+        border-radius: 20px;
+    }
+    .info .overview .title{
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .info .overview .text{
+        font-size: 30px;
+    }
     /* FOURTH-WRAP */
-    .project-title .title-text{}
+    .project-title .title-text{
+        font-size: 32px;
+    }
+    .project-list .project-list-wrap{
+        height: 80%;
+    }
+    p.project-info b{
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+    p.project-info b::after{
+        font-size: 24px;
+        padding: 18px;
+        border-radius: 24px;
+        margin: 0 0 3px 10px;
+    }
+    p.project-info span{
+        font-size: 30px;
+    }
+    .project-list-wrap ul li .link-btns{
+        margin-top: 30px;
+    }
+    .project-list-wrap ul li .link-btns a.link-btn{
+        border-radius: 10px;
+    }
+    a.link-btn span{
+        font-size: 24px;
+    }
+    a.link-btn span em{
+        font-size: 16px;
+        vertical-align: middle;
+    }
     /* FIFTH-WRAP */
-    .contact-title span.title-text{}
-    .contact-title span.sub-text{}
-    li.contact-list p.title{}
-    li.contact-list span.text{}
+    .menu-inner .design-title span.title-text{
+        font-size: 32px;
+    }
+    .design-info span.text{
+        font-size: 28px;
+    }
+    .design-info .logo.nepa{
+        max-width:12vw;
+    }
+    .design-info .logo.nf{
+        max-width:10.7vw;
+    }
+    /* SIXTH-WRAP */
+    .contact-title span.title-text{
+        font-size: 40px;
+    }
+    .contact-title span.sub-text{
+        font-size: 30px;
+    }
+    li.contact-list p.title{
+        font-size: 48px;
+    }
+    li.contact-list span.text{
+        font-size: 45px;
+    }
+    /* FOOTER */
+    footer .footer-inner{
+        padding: 45px 0;
+    }
+    .footer-inner address.copyright{
+        font-size: 32px;
+    }
 }
 /* 집가서 모니터 사이즈별 폰트크기랑 드래그범위 다 수정해야지~ */
