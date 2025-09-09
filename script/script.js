@@ -187,7 +187,7 @@ function isPageTopFalse(menu, topBtn){
 }
 window.addEventListener('scroll', function(){
     let pageTop = document.documentElement.scrollTop;
-    console.log(pageTop);
+    // console.log(pageTop);
     let topBtn = document.querySelector('.top-btn');
     gnbMenus.forEach(menu => {
         if(smallMobileMedia.matches){
@@ -217,328 +217,53 @@ window.addEventListener('scroll', function(){
     })
 })
 
+let container = document.querySelector('.main-container');
+let sections = document.querySelectorAll('section');
+let sectionCount = sections.length;
+let scrollThreadHold = 300;
+let wheelCount = 0;
 
 // 마우스 스크롤 시 각 섹션 별로 카운트 적용 후 부드럽게 넘어가는 로직.
-window.addEventListener('wheel', function(event){
-    let rects = document.querySelectorAll("svg rect");
-    // 스크롤할때마다 카운트 1씩 증감함.
-    if(event.deltaY > 0){
-        screenCount = Math.min(screenCount + 1, 6);
-    }else{
-        screenCount = Math.max(screenCount - 1, 0);
-    }
-    // 반응형 기기에 따른 스크롤링 범위 설정
-    if(mobileMedia.matches){
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 930,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 1880,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 2800,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 3800,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 4700,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 4852,
-                behavior: 'smooth'
-            })
+function init(){
+    mouseWheelEvent();
+}
+function mouseWheelEvent(){
+    container.addEventListener('wheel',function(e){
+        e.preventDefault();
+
+        if(e.deltaY > 0){
+            wheelCount += Math.abs(e.deltaY);
         }
-    }
-    else if(smallMobileMedia.matches){
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 705,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 1460,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 2190,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 2930,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 3690,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 3965,
-                behavior: 'smooth'
-            })
+        else{
+            wheelCount -= Math.abs(e.deltaY);
         }
-    }
-    else if(tabletMedia.matches){
-        rects.forEach((rect, index) => {
-            rects[index].setAttribute('rx','4');
-        })
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 900,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 1850,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 2800,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 3740,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 4710,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 4830,
-                behavior: 'smooth'
-            })
+
+        if(Math.abs(wheelCount) > scrollThreadHold){
+            if(wheelCount > 0){
+                gotoSection(screenCount + 1);
+            }
+            else{
+                gotoSection(screenCount - 1);
+            }
+            wheelCount = 0;
+            
+            function gotoSection(targetSection){
+                targetSection = Math.max(0, Math.min(targetSection, sectionCount - 1));
+                screenCount = targetSection;
+                console.log(screenCount);
+                animateSection();
+            }
+            function animateSection(){
+                const moveY = -screenCount * window.innerHeight;
+                gsap.to(container,{
+                    y: moveY,
+                })
+            }
         }
-    }
-    else if(desttopMedia_HD.matches){
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 820,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 1715,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 2550,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 3460,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 4283,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 5471,
-                behavior: 'smooth'
-            })
-        }
-    }
-    else if(desttopMedia_LAPTOP.matches){
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 1020,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 2060,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 3070,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 4155,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 5150,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 5471,
-                behavior: 'smooth'
-            })
-        }
-    }
-    else if(desttopMedia_FHD.matches){
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 1040,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 2130,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 3170,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 4290,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 5320,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 5600,
-                behavior: 'smooth'
-            })
-        }
-    }
-    else if(desttopMedia_QHD.matches){
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 1370,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 2840,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 4240,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 5710,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 7100,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 7400,
-                behavior: 'smooth'
-            })
-        }
-    }
-    else if(desttopMedia_4K.matches){
-        if(screenCount == 0){
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 1){
-            window.scrollTo({
-                top: 2020,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 2){
-            window.scrollTo({
-                top: 4260,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 3){
-            window.scrollTo({
-                top: 6380,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 4){
-            window.scrollTo({
-                top: 8590,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 5){
-            window.scrollTo({
-                top: 10670,
-                behavior: 'smooth'
-            })
-        }else if(screenCount == 6){
-            window.scrollTo({
-                top: 12000,
-                behavior: 'smooth'
-            })
-        }
-    }
-    else{
-        console.error('gnb error')
-    }
-})
+    })
+}
+
+init();
 
 
 // GNB의 메뉴 클릭 시 각 섹션으로 섹션 스크롤링 되며 이동.

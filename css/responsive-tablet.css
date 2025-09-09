@@ -50,12 +50,20 @@
         border: none;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
     }
-    .gnb-responsive button svg{
-        transition: 0.4s;
+    .gnb-responsive button [class*=-icon]{
+        display: none;
     }
-    .gnb-responsive button.active{
-        transform: translateY(-10px);
+    .gnb-responsive button [class*=-icon].active{
+        display: block;
+    }
+    .gnb-responsive button [class*=-icon] > i.bi{
+        display: inline-block;
+        font-size: 2em;
+    }
+    .gnb-responsive button [class*=-icon]:not(.close-icon) > i.bi{
+        color: #fff;
     }
     header .header-inner nav.gnb ul{
         flex-direction: column;
@@ -85,10 +93,10 @@
 
 
     /* ### FIRST WRAP ### */
-    .main-container .first-wrap .intro-title{
+    .main-container section.first-wrap .intro-title{
         width: 45%;
     }
-    .first-wrap .intro-title .title-top{
+    section.first-wrap .intro-title .title-top{
         gap: 20px;
     }
     .intro-title .title-top .title-arrow::before{
@@ -111,13 +119,13 @@
         line-height: 18px;
         transform: translateX(-10px);
     }
-    .first-wrap .bg-wrapper{
+    section.first-wrap .bg-wrapper{
         height: 110vh;
     }
 
 
     /* ### SECOND WRAP ### */
-    .main-container .second-wrap .about .profile-container{
+    .main-container section.second-wrap .about .profile-container{
         flex-direction: column;
         height: 80%;
     }
@@ -166,7 +174,7 @@
 
 
     /* ### THIRD WRAP ### */
-    .main-container .third-wrap .menu.skill .skill-card-container {
+    .main-container section.third-wrap .menu.skill .skill-card-container {
         height: 75%;
     }
     .skill-card-container [class*="-wrap"]{
@@ -205,11 +213,11 @@
 
 
     /* ### FOURTH WRAP ### */
-    .fourth-wrap .menu.project .menu-inner{
+    section.fourth-wrap .menu.project .menu-inner{
         flex-direction: column;
         padding: 10vh 10%;
     }
-    .fourth-wrap .menu.project .menu-inner .project-title{
+    section.fourth-wrap .menu.project .menu-inner .project-title{
         top: 0;
         justify-content: center;
     }
@@ -246,7 +254,7 @@
 
 
     /* ### FIVETH WRAP ### */
-    .fifth-wrap .menu.design .menu-inner .design-box{
+    section.fifth-wrap .menu.design .menu-inner .design-box{
         height: 70%;
     }
     .menu-inner .design-box .design-wrap{
@@ -291,16 +299,16 @@
 
 
     /* ### SIXTH WRAP ### */
-    .sixth-wrap .menu.contact .menu-inner{
+    section.sixth-wrap .menu.contact .menu-inner{
         flex-direction: column;
         align-items: flex-start;
     }
-    .sixth-wrap .menu.contact .menu-inner .contact-title{
+    section.sixth-wrap .menu.contact .menu-inner .contact-title{
         top: 0;
         width: 100%;
         height: 24%;
     }
-    .sixth-wrap .menu.contact .menu-inner .contact-box{
+    section.sixth-wrap .menu.contact .menu-inner .contact-box{
         width: 100%;
         padding: 0;
         border: none;
