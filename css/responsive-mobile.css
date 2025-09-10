@@ -110,11 +110,6 @@
         width: 14px;
         transform: translateY(-1px);
     }
-    .title-bottom .sub-text .cursor{
-        font-size: 8px;
-        line-height: 25px;
-        transform: translateX(-5px);
-    }
     section.first-wrap .bg-wrapper{
         height: 110vh;
     }

@@ -325,19 +325,6 @@ section.first-wrap .intro-title{
     animation-fill-mode: forwards;
     animation-delay: 6.5s;
 }
-.sub-text .cursor{
-    position: absolute;
-    display: inline-block;
-    text-align: center;
-    margin-left: 3px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 22px;
-    opacity: 0;
-    animation: cursor 1s linear infinite;
-    animation-delay: 6.5s;
-}
 .main-title span{
     animation: blur 4.2s ease-out;
     animation-fill-mode: forwards;
@@ -1491,11 +1478,7 @@ footer .footer-inner{
     .title-bottom .sub-text{
         font-size: 13px;
     }
-    .sub-text .cursor{
-        font-size: 12px;
-        line-height: 18px;
-        margin: 0;
-    }
+
     .title-bottom .main-title span{
         font-size: 45px;
     }
@@ -1821,11 +1804,7 @@ footer .footer-inner{
     .title-bottom .sub-text span.text{
         font-size: 26px;
     }
-    .sub-text .cursor{
-        font-size: 28px;
-        line-height: 30px;
-        margin: 0;
-    }
+
     .scroll img{
         width: 1vw;
         transform: translateY(15px);

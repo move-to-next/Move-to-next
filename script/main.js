@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
     function init(){
         reloadScrollTop();
         mouseWheelEvent();
-        // openBgDelete();
+        openBgDelete();
     }
 
     function reloadScrollTop(){
@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', function(){
     
 
     // 4.5초(4500밀리초)후 인트로 애니메이션 화면 DISPLAY NONE(가리기)
-    //function openBgDelete(){
-    //    openBg = document.querySelector('.opening-container');
-    //    setTimeout(()=>{
-    //        openBg.style.display = 'none';
-    //    }, 4500)
-    //}
+    function openBgDelete(){
+       openBg = document.querySelector('.opening-container');
+       setTimeout(()=>{
+           openBg.style.display = 'none';
+       }, 4500)
+    }
 })

@@ -114,11 +114,6 @@
     .title-bottom .sub-text .text{
         font-size: 14px;
     }
-    .title-bottom .sub-text .cursor{
-        font-size: 14px;
-        line-height: 18px;
-        transform: translateX(-10px);
-    }
     section.first-wrap .bg-wrapper{
         height: 110vh;
     }
