@@ -21,7 +21,10 @@ document.addEventListener('DOMContentLoaded', function(){
         skillCardClick();
         projectSwiper();
         designSwiper();
-        // openBgDelete();
+        designItemClick();
+        contactTextShow();
+        contactListShow();
+        openBgDelete();
     }
 
     // ###### DOM 요소 ######
@@ -39,6 +42,12 @@ document.addEventListener('DOMContentLoaded', function(){
         skillCards = document.querySelectorAll('.card-wrap .card'); // SKILL섹션 스킬카드.
         skillInfos = document.querySelectorAll('.info-wrap .info'); // SKILL섹션 스킬정보.
         hoverTexts = document.querySelectorAll('.card .card-hover'); // SKILL섹션 마우스오버문구.
+        designitems = document.querySelectorAll('.design-list .design-card'); // DESIGN섹션 디자인 배너 아이템.
+        designPopups = document.querySelectorAll('.banner-wrap .banner'); // DESIGN섹션 상세이미지 팝업.
+        designCloseBtns = document.querySelectorAll('.banner .close-btn'); // DESIGN섹션 상세이미지 팝업 닫기버튼.
+        designPopupBg = document.querySelector('.banner-wrap'); // DESIGN섹션 상세이미지 팝업배경.
+        contactTitles = document.querySelectorAll('.contact-title span'); // CONTACT섹션 타이틀 문구.
+        contactObjects = document.querySelectorAll('ul.contact-wrap li.contact-list'); // CONTACT섹션 리스트.
         scrollTargets = [...sections, footer]; // 사이트의 전체 타겟 섹션들(헤더빼고).
         targetCount = scrollTargets.length; // 전체 타켓 섹션의 길이값.
     }
@@ -51,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function(){
             toggleActions: "play reverse play reverse",
         }
 
-        return { fadeEffect};
+        return {fadeEffect};
     }
 
     // ## 페이지 재로드되면 페이지 최상단으로 이동. ##
@@ -175,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function(){
             card.addEventListener('click', () => skillCardActive(index));
         })
     }
-    // ## SKILLS 클릭시 active 추가 ##
+    // SKILLS 클릭시 active 추가
     function skillCardActive(index){
         skillCards[index].classList.toggle('active');
         skillInfos[index].classList.toggle('active');
@@ -224,7 +233,54 @@ document.addEventListener('DOMContentLoaded', function(){
         return {bottomSwiper, topSwiper}
     }
     // ## DESIGNS 배너 클릭시 팝업이미지 ##
-    function designImgClick(){
-        
+    function designItemClick(){
+        designitems.forEach((item, index) => {
+            item.addEventListener('click', () => designItemActive(index));
+        })
+        designCloseBtns.forEach((btn, index)=>{
+            btn.addEventListener('click', () => designRemoveActive(index));
+        })
+    }
+    // DESIGNS 클릭시 active 추가
+    function designItemActive(index){
+        designPopups[index].classList.add('active');
+        designPopupBg.classList.add('active');
+    }
+    function designRemoveActive(index){
+        designPopups[index].classList.remove('active');
+        designPopupBg.classList.remove('active');
+    }
+
+    // ## CONTACT 문구 FADE
+    function contactTextShow(){
+        const fadeTitle = gsapModules();
+        contactTitles.forEach((title)=>{
+            gsap.fromTo(title,
+                {opacity:0},
+                {
+                    opacity: 1,
+                    scrollTrigger:{
+                        trigger: title,
+                        ...fadeTitle.fadeEffect,
+                    }
+                }
+            )
+        })
+    }
+    // ## CONTACT 리스드 FADE
+    function contactListShow(){
+        const fadeList = gsapModules();
+        contactObjects.forEach((list)=>{
+            gsap.fromTo(list,
+                {opacity:0},
+                {
+                    opacity: 1,
+                    scrollTrigger:{
+                        trigger: list,
+                        ...fadeList.fadeEffect,
+                    }
+                }
+            )
+        })
     }
 })
