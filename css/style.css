@@ -650,7 +650,7 @@ section.third-wrap .menu.skill .skill-card-container{
     gap: 1vw;
     z-index: 30;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
     transition-delay: 0.5s;
 }
 .card-wrap .card{
@@ -751,7 +751,7 @@ section.third-wrap .menu.skill .skill-card-container{
     gap: 1vw;
     margin-top: 1vh;
     opacity: 0;
-    transition: 1s;
+    transition: 0.5s;
     transition-delay: 1s;
 }
 .info-wrap .info{

@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function(){
     let gnbMenu; // GNB 네비게이션 메뉴
     let gnbBtn; // GNB 반응형 버튼
     let gnbIcon; // GNB 반응형 버튼 아이콘
-    let card; // 스킬 카드
-    let info; // 스킬 소개
 
     let contentCount = 0; // 전체 카운트 초기값
 
@@ -19,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function(){
         titleScrollTrigger();
         aboutThmbnail();
         aboutInfoText();
+        skillCardShow();
+        skillCardClick();
+        projectSwiper();
+        designSwiper();
         // openBgDelete();
     }
 
@@ -33,11 +35,24 @@ document.addEventListener('DOMContentLoaded', function(){
         sectionSVGs = document.querySelectorAll('svg.background rect.border'); // 섹션 SVG.
         aboutThum = document.querySelector('.profile.overview .thum'); // ABOUT섹션 썸네일.
         aboutTexts = document.querySelectorAll('.profile.introduce [class*=-info]'); // ABOUT섹션 텍스트들.
+        skillWraps = document.querySelectorAll('.skill-card-container [class*=-wrap]'); // SKILL섹션 카드묶음.
+        skillCards = document.querySelectorAll('.card-wrap .card'); // SKILL섹션 스킬카드.
+        skillInfos = document.querySelectorAll('.info-wrap .info'); // SKILL섹션 스킬정보.
+        hoverTexts = document.querySelectorAll('.card .card-hover'); // SKILL섹션 마우스오버문구.
         scrollTargets = [...sections, footer]; // 사이트의 전체 타겟 섹션들(헤더빼고).
         targetCount = scrollTargets.length; // 전체 타켓 섹션의 길이값.
     }
 
-    // #### 기본동작 ####
+    // ###### GSAP 객체 모음 ######
+    function gsapModules(){
+        const fadeEffect = {
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
+        }
+
+        return { fadeEffect};
+    }
 
     // ## 페이지 재로드되면 페이지 최상단으로 이동. ##
     function reloadScrollTop(){
@@ -47,8 +62,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     // ## 마우스 휠 스크롤할 때 한 섹션마다 부드럽게 이동. ##
     function mouseWheelEvent(){
-        gsap.registerPlugin(Observer, scrollTo);
-
         Observer.create({
             target: window,
             type: 'wheel',
@@ -109,44 +122,109 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     }
 
-    // #### 헤더 HEADER ####
-
     // ## GNB 메뉴클릭시 해당섹션으로 스크롤 이동. ##
-    //function gnbBtnClickEvent(){}
+    function gnbBtnClickEvent(){}
 
-    // #### 자기소개 ABOUT ####
-    // ## 썸네일 ##
+    // ## ABOUT 썸네일 ##
     function aboutThmbnail(){
+        const fadeText = gsapModules();
         gsap.to(aboutThum,{
             opacity:1,
             scrollTrigger:{
                 trigger: aboutThum,
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play reverse play reverse", 
+                ...fadeText.fadeEffect
             }
         })
     }
-    // ## 소개문구 ##
+    // ## ABOUT 소개문구 ##
     function aboutInfoText(){
+        const fadeText = gsapModules();
         aboutTexts.forEach((text)=>{
             gsap.fromTo(text,
-                {
-                    opacity: 0,
-                },
+                {opacity: 0},
                 {
                     opacity: 1,
                     scrollTrigger:{
                         trigger:text,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play reverse play reverse",
+                        ...fadeText.fadeEffect,
                     }
                 }
             )
         })
     }
 
-    // #### 스킬소개 SKILLS ####
-    // ## 썸네일 ##
+    // ## SKILLS 스킬콘텐츠 ##
+    function skillCardShow(){
+        const fadeWrap = gsapModules();
+        skillWraps.forEach((wrap)=>{
+            gsap.fromTo(wrap,
+                {opacity: 0},
+                {
+                    opacity: 1,
+                    scrollTrigger:{
+                        trigger:wrap,
+                        ...fadeWrap.fadeEffect,
+                    }
+                }
+            )
+        })
+    }
+    // ## SKILLS 스킬카드클릭 ##
+    function skillCardClick(){
+        skillCards.forEach((card, index)=>{
+            card.addEventListener('click', () => skillCardActive(index));
+        })
+    }
+    // ## SKILLS 클릭시 active 추가 ##
+    function skillCardActive(index){
+        skillCards[index].classList.toggle('active');
+        skillInfos[index].classList.toggle('active');
+        hoverTexts[index].classList.toggle('active');
+    }
+
+    // ## PROJECTS SWIPER 함수 ##
+    function projectSwiper(){
+        const projectSwiper = new Swiper('.project-list-wrap.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            pagination: false,
+            navigation:{
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next'
+            },
+        })
+
+        return {projectSwiper}
+    }
+
+    // ## DESIGNS SWIPER 함수 ##
+    function designSwiper(){
+        const bottomSwiper = new Swiper('.design-list:is(.second,.third,.fifth).swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                pauseOnMouseEnter: true,
+            },
+            pagination: false,
+            navigation: false
+        })
+        const topSwiper = new Swiper('.design-list.fourth.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            speed: 2500,
+            autoplay: {
+                delay: 3000,
+                pauseOnMouseEnter: true,
+            },
+            pagination: false,
+            navigation: false
+        })
+
+        return {bottomSwiper, topSwiper}
+    }
+    // ## DESIGNS 배너 클릭시 팝업이미지 ##
+    function designImgClick(){
+        
+    }
 })
