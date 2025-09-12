@@ -22,7 +22,7 @@ body{
     gap: 3vh;
     padding: 10vh 10%;
     height: 100%;
-    margin-top: 5vh;
+    margin-top: 4.5vh;
 }
 .menu-inner h2{
     display: block;
@@ -640,14 +640,16 @@ section.third-wrap .menu.skill .skill-card-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100%;
     padding: 0 3%;
     border-radius: 10px;
 }
 .skill-card-container .card-wrap{
     display: flex;
+    width: 100%;
+    gap: 0.1vw;
     justify-content: space-between;
-    gap: 1vw;
     z-index: 30;
     opacity: 0;
     transition: 0.5s;
@@ -655,7 +657,7 @@ section.third-wrap .menu.skill .skill-card-container{
 }
 .card-wrap .card{
     position: relative;
-    flex: 1;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -745,10 +747,14 @@ section.third-wrap .menu.skill .skill-card-container{
     user-select: none;
     color: #fff;
 }
+.card-wrap .card.javascript .thum{
+    padding-top: 86%;
+}
 .skill-card-container .info-wrap{
     display: flex;
+    width: 100%;
+    gap: 0.1vw;
     justify-content: space-between;
-    gap: 1vw;
     margin-top: 1vh;
     opacity: 0;
     transition: 0.5s;
@@ -756,13 +762,13 @@ section.third-wrap .menu.skill .skill-card-container{
 }
 .info-wrap .info{
     position: relative;
-    flex: 1;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 4vh 1.5%;
     background-color: #222222;
-    border-radius: 5px;
+    border-radius: 10px;
     transform: translateY(-60%);
     transition: 0.2s ease-in-out;
 }
@@ -816,7 +822,7 @@ section.fourth-wrap .menu.project{
     flex-direction: column;
     gap: 1vh;
     top: 45%;
-    height: 65%;
+    height: 50%;
 }
 .project-title .title-text{
     font-family: 'Noto Sans KR';
@@ -1509,7 +1515,7 @@ footer .footer-inner{
     }
     /* THIRD-WRAP */
     .skill-card-container .info-wrap{
-        gap: 1.5vw;
+        gap: 1vw;
     }
     .info .overview{
         min-height: 20vh
@@ -1636,9 +1642,6 @@ footer .footer-inner{
         margin-left: 6px;
     }
     /* THIRD-WRAP */
-    .skill-card-container .info-wrap{
-        gap: 1.5vw;
-    }
     .card .overview span{
         font-size: 28px;
     }
@@ -1646,7 +1649,6 @@ footer .footer-inner{
         font-size: 18px;
     }
     .info-wrap .info{
-        padding: 3.5vh 1.5%;
         transform: translateY(-58%);
     }
     .info .overview .text{
