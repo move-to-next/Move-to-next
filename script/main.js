@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-    let gnb; // GNB 네비게이션
-    let gnbMenu; // GNB 네비게이션 메뉴
-    let gnbBtn; // GNB 반응형 버튼
-    let gnbIcon; // GNB 반응형 버튼 아이콘
-
+    
     let contentCount = 0; // 전체 카운트 초기값
 
     init();
@@ -25,12 +21,17 @@ document.addEventListener('DOMContentLoaded', function(){
         contactTextShow();
         contactListShow();
         openBgDelete();
+        gnbBtnClickEvent();
     }
 
     // ###### DOM 요소 ######
     function setupElements(){
         header = document.querySelector('header'); // 헤더
         footer = document.querySelector('footer'); // 푸터
+        gnb = document.querySelector('nav.gnb'); // GNB 네비게이션
+        gnbMenus = document.querySelectorAll('nav.gnb ul li span'); // GNB 메뉴 
+        gnbBtns = document.querySelector('.gnb-responsive button'); // GNB 메뉴 버튼
+        gnbIcons = document.querySelectorAll('.gnb-responsive svg'); // GNB 반응형 아이콘
         openBg = document.querySelector('.opening-container'); // 인트로 애니메이션 화면
         container = document.querySelector('.main-container'); // 메인 콘테이너
         sections = document.querySelectorAll('section'); // 여러 섹션
@@ -132,7 +133,15 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     // ## GNB 메뉴클릭시 해당섹션으로 스크롤 이동. ##
-    function gnbBtnClickEvent(){}
+    function gnbBtnClickEvent(){
+        gnbMenus.forEach((menu, index)=>{
+            menu.addEventListener('click', function(){
+                const menus = Array.from(gnbMenus);
+                contentCount = menus.findIndex(target => target === gnbMenus[index]);
+                gotoSection(contentCount + 1);
+            });
+        })
+    }
 
     // ## ABOUT 썸네일 ##
     function aboutThmbnail(){
