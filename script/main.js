@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
     function mouseWheelEvent(){
         Observer.create({
             target: window,
-            type: 'wheel',
+            type: 'wheel,touch',
             onUp: () => {
                 gotoSection(contentCount - 1);
             },
