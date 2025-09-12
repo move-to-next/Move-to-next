@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(){
     
-    let contentCount = 0; // 전체 카운트 초기값
+    let contentCount = 0; // 전체 카운트 초기값(초기화)
 
-    init();
+    init(); // 전체 모듈 실행
 
     // ###### 전체 모듈 실행 함수 ######
     function init(){
@@ -225,6 +225,9 @@ document.addEventListener('DOMContentLoaded', function(){
     function skillCardClick(){
         skillCards.forEach((card, index)=>{
             card.addEventListener('click', () => skillCardActive(index));
+        })
+        skillInfos.forEach((info, index)=>{
+            info.addEventListener('click', () => skillCardActive(index));
         })
     }
     // SKILLS 클릭시 active 추가
