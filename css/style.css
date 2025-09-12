@@ -1716,6 +1716,12 @@ footer .footer-inner{
     .scroll span{
         font-size: 20px;
     }
+    .title-top .title-arrow::before{
+        top: 43%;
+    }
+    .title-top .title-arrow img{
+        width: 50px;
+    }
     /* SECOND-WRAP */
     .second-wrap .about .profile-container {
         height: 80%;
@@ -1808,6 +1814,12 @@ footer .footer-inner{
     }
     .title-bottom .sub-text span.text{
         font-size: 26px;
+    }
+    .title-top .title-arrow::before{
+        top: 43%;
+    }
+    .title-top .title-arrow img{
+        width: 50px;
     }
 
     .scroll img{

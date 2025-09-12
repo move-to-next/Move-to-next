@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function(){
             onDown: () => {
                 gotoSection(contentCount + 1);
             },
-            tolerance: 500,
+            tolerance: 300,
             preventDefault: true
         });
     };
