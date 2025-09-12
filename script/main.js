@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
         topBtnClick();
         aboutThmbnail();
         aboutInfoText();
+        aboutResInfoText();
         skillCardShow();
         skillCardClick();
         projectSwiper();
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
         sectionSVGs = document.querySelectorAll('svg.background rect.border'); // 섹션 SVG.
         aboutThum = document.querySelector('.profile.overview .thum'); // ABOUT섹션 썸네일.
         aboutTexts = document.querySelectorAll('.profile.introduce [class*=-info]'); // ABOUT섹션 텍스트들.
+        aboutResText = document.querySelector('.profile-container .profile.overview .responsive-info') // ABOUT섹션 반응형 텍스트.
         skillWraps = document.querySelectorAll('.skill-card-container [class*=-wrap]'); // SKILL섹션 카드묶음.
         skillCards = document.querySelectorAll('.card-wrap .card'); // SKILL섹션 스킬카드.
         skillInfos = document.querySelectorAll('.info-wrap .info'); // SKILL섹션 스킬정보.
@@ -76,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function(){
     function mouseWheelEvent(){
         Observer.create({
             target: window,
-            type: 'wheel,scroll',
+            type: 'wheel',
             onUp: () => {
                 gotoSection(contentCount - 1);
             },
@@ -216,6 +218,20 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             )
         })
+    }
+    // ## ABUOT 반응형 소개문구 ##
+    function aboutResInfoText(){
+        const fadeText = gsapModules();
+        gsap.fromTo(aboutResText,
+            {opacity: 0},
+            {
+                opacity: 1,
+                scrollTrigger:{
+                    trigger:aboutResText,
+                    ...fadeText.fadeEffect,
+                }
+            }
+        )
     }
 
     // ## SKILLS 스킬콘텐츠 ##

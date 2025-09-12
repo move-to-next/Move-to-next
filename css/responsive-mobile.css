@@ -5,11 +5,15 @@
     /* ##### COMMON STYLES ##### */
     .menu .menu-inner{
         justify-content: center;
+        gap: 2vh;
+        height: 82%;
+        padding: 5vh 10%;
     }
     .menu .menu-inner h2{
         position: relative;
         margin: 0;
         font-size: 36px;
+        line-height: 36px;
     }
     .menu-inner .design-title span.title-text{
         font-size: 14px;
@@ -124,7 +128,7 @@
     /* ### SECOND WRAP ### */
     .main-container section.second-wrap .about .profile-container{
         flex-direction: column;
-        height: 80%;
+        height: 90%;
     }
     .menu-inner .profile-container .profile.overview{
         flex-direction: row;
