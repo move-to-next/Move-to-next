@@ -61,8 +61,6 @@
     .gnb-responsive button [class*=-icon] > i.bi{
         display: inline-block;
         font-size: 2em;
-    }
-    .gnb-responsive button [class*=-icon]:not(.close-icon) > i.bi{
         color: #fff;
     }
     header .header-inner nav.gnb ul{

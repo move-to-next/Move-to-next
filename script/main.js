@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
         drawBorderSVG();
         titleScrollTrigger();
         gnbBtnClickEvent();
+        gnbResBtnClick();
         topBtnClick();
         aboutThmbnail();
         aboutInfoText();
@@ -24,15 +25,15 @@ document.addEventListener('DOMContentLoaded', function(){
         contactListShow();
         openBgDelete();
     }
-
     // ###### DOM 요소 ######
     function setupElements(){
         header = document.querySelector('header'); // 헤더
         footer = document.querySelector('footer'); // 푸터
         gnb = document.querySelector('nav.gnb'); // GNB 네비게이션
         gnbMenus = document.querySelectorAll('nav.gnb ul li span'); // GNB 메뉴 
-        gnbBtns = document.querySelector('.gnb-responsive button'); // GNB 메뉴 버튼
-        gnbIcons = document.querySelectorAll('.gnb-responsive svg'); // GNB 반응형 아이콘
+        gnbBtn = document.querySelector('.gnb-responsive button'); // GNB 메뉴 버튼
+        gnbMenuIcon = document.querySelector('.gnb-responsive button .menu-icon'); // GNB 반응형 아이콘
+        gnbCloseIcon = document.querySelector('.gnb-responsive button .close-icon'); // GNB 반응형 아이콘
         openBg = document.querySelector('.opening-container'); // 인트로 애니메이션 화면
         topBtn = document.querySelector('.top-btn'); // 최상단 이동 TOP BUTTON
         container = document.querySelector('.main-container'); // 메인 콘테이너
@@ -54,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function(){
         scrollTargets = [...sections, footer]; // 사이트의 전체 타겟 섹션들(헤더빼고).
         targetCount = scrollTargets.length; // 전체 타켓 섹션의 길이값.
     }
-
     // ###### GSAP 객체 모음 ######
     function gsapModules(){
         const fadeEffect = {
@@ -173,6 +173,20 @@ document.addEventListener('DOMContentLoaded', function(){
                 contentCount = menus.findIndex(target => target === gnbMenus[index]);
                 gotoSection(contentCount + 1);
             });
+        })
+    }
+    // ## GNB 반응형 버튼 클릭시 GNB메뉴 활성화. ##
+    function gnbResBtnClick(){
+        gnbBtn.addEventListener('click',function(){
+            if(gnbMenuIcon.classList.contains('active')){
+                gnbMenuIcon.classList.remove('active');
+                gnbCloseIcon.classList.add('active');
+                gnb.classList.toggle('active');
+            }else{
+                gnbMenuIcon.classList.add('active');
+                gnbCloseIcon.classList.remove('active');
+                gnb.classList.toggle('active');
+            }
         })
     }
 
