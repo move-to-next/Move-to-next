@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
         mouseWheelEvent();
         drawBorderSVG();
         titleScrollTrigger();
+        gnbBtnClickEvent();
+        topBtnClick();
         aboutThmbnail();
         aboutInfoText();
         skillCardShow();
@@ -21,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function(){
         contactTextShow();
         contactListShow();
         openBgDelete();
-        gnbBtnClickEvent();
     }
 
     // ###### DOM 요소 ######
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function(){
         gnbBtns = document.querySelector('.gnb-responsive button'); // GNB 메뉴 버튼
         gnbIcons = document.querySelectorAll('.gnb-responsive svg'); // GNB 반응형 아이콘
         openBg = document.querySelector('.opening-container'); // 인트로 애니메이션 화면
+        topBtn = document.querySelector('.top-btn'); // 최상단 이동 TOP BUTTON
         container = document.querySelector('.main-container'); // 메인 콘테이너
         sections = document.querySelectorAll('section'); // 여러 섹션
         sectionTitles = document.querySelectorAll('.menu-inner h2 span'); // 여러 섹션 타이틀(h2)
@@ -75,8 +77,12 @@ document.addEventListener('DOMContentLoaded', function(){
         Observer.create({
             target: window,
             type: 'wheel',
-            onUp: () => gotoSection(contentCount - 1),
-            onDown: () => gotoSection(contentCount + 1),
+            onUp: () => {
+                gotoSection(contentCount - 1);
+            },
+            onDown: () => {
+                gotoSection(contentCount + 1);
+            },
             tolerance: 500,
             preventDefault: true
         });
@@ -93,6 +99,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
         contentCount = target;
         console.log(contentCount);
+        headerBgChange(); // 처음화면에서 벗어났을시, 헤더 배경색 변경.
+        gnbTextColorChange(); // 처음화면에서 벗어났을시, GNB 글자색 변경.
+        topBtnShow(); // 처음화면에서 벗어났을시, TOP BUTTON 노출.
 
         gsap.to(window, {
         duration: 0.5,
@@ -100,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function(){
             y: scrollTargets[target],
             autoKill: false
         }
+        
     });
     }
     // ## 섹션 스크롤이 감지되면 타이틀 문구 이동. ##
@@ -131,7 +141,31 @@ document.addEventListener('DOMContentLoaded', function(){
             })
         })
     }
+    // 처음화면에서 벗어났을시, TOP BUTTON 노출
+    function topBtnShow(){
+        const isScrollDown = contentCount > 0 ? topBtn.style.transform = 'translate(-40%, -40%)' : topBtn.style.transform = 'translate(100%, -40%)';
+        return {isScrollDown};
+    }
+    // TOP BUTTON 클릭시, 최상단으로 이동
+    function topBtnClick(){
+        topBtn.addEventListener('click', () => {
+            contentCount = 0;
+            gotoSection(contentCount);
+        })
+    }
 
+    // 처음화면에서 벗어났을시, HEADER 배경색 변경
+    function headerBgChange(){
+        const isScrollDown = contentCount > 0 ? header.style.backgroundColor = 'white' : header.style.backgroundColor = 'transparent';
+        return {isScrollDown};
+    }
+    // 처음화면에서 벗어났을시, GNB 글자색 변경
+    function gnbTextColorChange(){
+        gnbMenus.forEach((menu, index) => {
+            const isScrollDown = contentCount > 0 ? gnbMenus[index].style.color = '#333' : gnbMenus[index].style.color = '#fff';
+            return {isScrollDown};
+        })
+    }
     // ## GNB 메뉴클릭시 해당섹션으로 스크롤 이동. ##
     function gnbBtnClickEvent(){
         gnbMenus.forEach((menu, index)=>{

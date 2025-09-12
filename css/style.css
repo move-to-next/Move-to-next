@@ -20,8 +20,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 3vh;
-    padding: 8vh 10%;
+    padding: 10vh 10%;
     height: 100%;
+    margin-top: 5vh;
 }
 .menu-inner h2{
     display: block;
@@ -30,7 +31,6 @@ body{
     line-height: 68px;
     font-weight: 700;
     color: #fff;
-    margin-top: 60px;
     overflow: hidden;
 }
 .menu-inner h2 span{
@@ -72,7 +72,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 10%;
+    padding: 30px 10%;
 }
 .header-inner h1.logo{
     position: relative;
@@ -1654,7 +1654,7 @@ footer .footer-inner{
     }
     /* FOURTH-WRAP */
     .project-list .project-list-wrap{
-        height: 85%;
+        height: 90%;
     }
     .project-title .title-text{
         font-size: 18px;
