@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function(){
                     onLeave: ()=> {svg.style.strokeDashoffset = '4000'},
                     onEnterBack: ()=> {svg.style.strokeDashoffset = '1000'},
                     onLeaveBack: ()=> {svg.style.strokeDashoffset = '4000'},
-                    markers: true,
                 }
             })
         })
