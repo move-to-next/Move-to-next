@@ -198,11 +198,17 @@
 
 
     /* ### THIRD WRAP ### */
+    .main-container section.third-wrap .menu.skill .menu-inner{
+        height: 100%;
+    }
     .main-container section.third-wrap .menu.skill .skill-card-container {
         height: 75%;
     }
     .skill-card-container [class*="-wrap"]{
         flex-wrap: wrap;
+    }
+    .menu.skill .skill-card-container .card-wrap{
+        gap: 2vw;
     }
     .skill-card-container [class*="-wrap"] .card{
         min-width: 30%;
@@ -223,13 +229,13 @@
     }
     .skill-card-container [class*="-wrap"] .info{
         min-width: 30%;
-        height: 52%;
+        height: 58%;
         padding: 2vh 2%;
         border-radius: 10px;
         transform: translateY(-106%);
     }
     .skill-card-container [class*="-wrap"] .info.active{
-        height: 52%;
+        height: 58%;
         padding: 2vh 2%;
         border-radius: 10px;
         transform: translateY(-106%);
@@ -241,7 +247,7 @@
         font-size: 10px;
     }
     .skill-card-container [class*="-wrap"] .info .overview .text{
-        font-size: 10px;
+        font-size: 8px;
     }
     .skill-card-container .card-wrap .card .card-hover{
         display: none;
@@ -444,6 +450,9 @@
     .skill-card-container [class*="-wrap"] .card.active{
         transform: translateY(98%);
     }
+    .card-wrap .card.javascript .thum{
+        padding-top: 86%;
+    }
     .skill-card-container [class*="-wrap"] .info.active{
         transform: translateY(-110%);
     }
@@ -451,7 +460,7 @@
         font-size: 9px;
     }
     .skill-card-container [class*="-wrap"] .info .overview .text{
-        font-size: 9px;
+        font-size: 8px;
     }
     /* ### FOURTH WRAP ### */
     .project-list-wrap ul li .project-thums{

@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
         designPopupBg = document.querySelector('.banner-wrap'); // DESIGN섹션 상세이미지 팝업배경.
         contactTitles = document.querySelectorAll('.contact-title span'); // CONTACT섹션 타이틀 문구.
         contactObjects = document.querySelectorAll('ul.contact-wrap li.contact-list'); // CONTACT섹션 리스트.
+        responMedia = window.matchMedia("(min-width: 350px) and (max-width: 1024px)"); // 데스크탑 외 반응형 기기 화면일때
         scrollTargets = [...sections, footer]; // 사이트의 전체 타겟 섹션들(헤더빼고).
         targetCount = scrollTargets.length; // 전체 타켓 섹션의 길이값.
     }
@@ -163,8 +164,16 @@ document.addEventListener('DOMContentLoaded', function(){
     // 처음화면에서 벗어났을시, GNB 글자색 변경
     function gnbTextColorChange(){
         gnbMenus.forEach((menu, index) => {
-            const isScrollDown = contentCount > 0 ? gnbMenus[index].style.color = '#333' : gnbMenus[index].style.color = '#fff';
-            return {isScrollDown};
+            const menuIcon = gnbMenuIcon.querySelector('i.bi');
+            if(responMedia.matches){
+                const isScrollDown = gnbMenus[index].style.color = '#fff';
+                const isGnbMenuColor = contentCount > 0 ? menuIcon.style.color = '#333' : menuIcon.style.color = '#fff';
+                return {isScrollDown , isGnbMenuColor};
+            }
+            else{
+                const isScrollDown = contentCount > 0 ? gnbMenus[index].style.color = '#333' : gnbMenus[index].style.color = '#fff';
+                return {isScrollDown};
+            }
         })
     }
     // ## GNB 메뉴클릭시 해당섹션으로 스크롤 이동. ##
