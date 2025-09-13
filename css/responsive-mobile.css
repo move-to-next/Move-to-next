@@ -126,7 +126,11 @@
 
 
     /* ### SECOND WRAP ### */
-    .main-container section.second-wrap .about .profile-container{
+    section.second-wrap .menu.about .menu-inner{
+        margin-top: 2vh;
+        height: 85%;
+    }
+    .main-container section.second-wrap .menu.about .profile-container{
         flex-direction: column;
         height: 90%;
     }
@@ -204,8 +208,9 @@
     .main-container section.third-wrap .menu.skill .skill-card-container {
         height: 75%;
     }
-    .skill-card-container [class*="-wrap"]{
+    .menu-inner .skill-card-container [class*="-wrap"]{
         flex-wrap: wrap;
+        gap: 1vw;
     }
     .menu.skill .skill-card-container .card-wrap{
         gap: 2vw;
@@ -225,17 +230,17 @@
         transform: translateY(100%);
     }
     .skill-card-container [class*="-wrap"] .card .overview span{
-        font-size: 14px;
+        font-size: 12px;
     }
     .skill-card-container [class*="-wrap"] .info{
         min-width: 30%;
-        height: 58%;
+        height: 54%;
         padding: 2vh 2%;
         border-radius: 10px;
         transform: translateY(-106%);
     }
     .skill-card-container [class*="-wrap"] .info.active{
-        height: 58%;
+        height: 54%;
         padding: 2vh 2%;
         border-radius: 10px;
         transform: translateY(-106%);
@@ -255,9 +260,15 @@
 
 
     /* ### FOURTH WRAP ### */
+    section.fourth-wrap .menu.project{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     section.fourth-wrap .menu.project .menu-inner{
         flex-direction: column;
         padding: 10vh 10%;
+        margin-top: 11vh;
     }
     section.fourth-wrap .menu.project .menu-inner .project-title{
         top: 0;
@@ -268,7 +279,7 @@
         word-break: keep-all;
     }
     .menu.project .menu-inner .project-list{
-        height: 75%;
+        height: 100%;
     }
     .menu.project .menu-inner .project-list .project-list-wrap{
         height: 90%;
@@ -277,14 +288,14 @@
         height: 30vh;
         align-items: center;
     }
-    .project-list-wrap :is(.swiper-button-prev, .swiper-button-next)::after{
+    .project-list .project-list-wrap :is(.swiper-button-prev, .swiper-button-next)::after{
         transform: scale(0.4);
     }
     .project-list-wrap .swiper-button-prev{
-        transform: translateX(-10px);
+        transform: translateX(-12px);
     }
     .project-list-wrap .swiper-button-next{
-        transform: translateX(10px);
+        transform: translateX(12px);
     }
     li .project-thums .page{
         padding-top: 28vh;
@@ -325,6 +336,9 @@
 
 
     /* ### FIVETH WRAP ### */
+    section.fifth-wrap .menu.design .menu-inner{
+        margin-top: 11vh;
+    }
     section.fifth-wrap .menu.design .menu-inner .design-box{
         height: 100%;
     }
@@ -377,6 +391,8 @@
     section.sixth-wrap .menu.contact .menu-inner{
         flex-direction: column;
         align-items: flex-start;
+        gap: 2vh;
+        margin-top: 11vh;
     }
     section.sixth-wrap .menu.contact .menu-inner .contact-title{
         top: 0;
@@ -450,8 +466,8 @@
     .skill-card-container [class*="-wrap"] .card.active{
         transform: translateY(98%);
     }
-    .card-wrap .card.javascript .thum{
-        padding-top: 86%;
+    .skill-card-container .card-wrap .card.javascript .thum{
+        padding-top: 60%;
     }
     .skill-card-container [class*="-wrap"] .info.active{
         transform: translateY(-110%);
