@@ -616,6 +616,10 @@ section.second-wrap .about .profile-container{
     font-family: 'Noto Sans KR';
     font-size: 16px;
 }
+.bottom-info .info ul li.impact{
+    font-size: 17px;
+    font-weight: 600;
+}
 .bottom-info .info ul li em{
     display: inline-block;
     margin-left: 5px;
